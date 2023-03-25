@@ -1,0 +1,55 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  height: 100%;
+}
+
+.container {
+  background-image: url("../assets/windows.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  min-width: 100vw;
+  position: absolute;
+}
+
+.menu__container {
+  min-height: 10vh;
+  min-width: 10vw;
+  background-color: blue;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.taskbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #245dda;
+  background: linear-gradient(to bottom, #245edc 0%, #3f8cf3 10%, #245edc 20%, #245edc 90%, #1941a5 100%) center/cover no-repeat;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 3.5%;
+  width: 100%;
+}
+.taskbar__time {
+  font-size: 0.8vw;
+  padding-right: 25%;
+  color: white;
+}
+.taskbar__time__container {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 5%;
+  background-color: #3f8cf3;
+  background: linear-gradient(to bottom, #3f8cf3 0%, skyblue 10%, #3f8cf3 20%, #3f8cf3 90%, #3f8cf3 100%) center/cover no-repeat;
+}
+.taskbar__start__button {
+  cursor: pointer;
+}
