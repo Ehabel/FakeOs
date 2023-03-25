@@ -20,14 +20,105 @@ body {
 .menu__container {
   min-height: 65vh;
   min-width: 25vw;
-  background-color: blue;
+  background-color: #3f8cf3;
   position: fixed;
   bottom: 0;
   left: 0;
+  border-radius: 10px 10px 0 0;
+}
+.menu__header {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  background: linear-gradient(to bottom, #245edc 0%, rgb(83, 181, 219) 4%, #245edc 6%, #3f8cf3 100%) center/cover no-repeat;
+  width: 100%;
+  height: 8vh;
+  border-radius: 10px 10px 0 0;
+}
+.menu__header__contents {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
 }
 .menu__header__image {
-  width: 50px;
-  height: 50px;
+  margin-top: 5%;
+  margin-left: 30%;
+  width: 3vw;
+  height: 6vh;
+  border: 2px solid white;
+  border-radius: 5px;
+}
+.menu__header__user {
+  color: white;
+  font-weight: 600;
+  font-size: 1vw;
+  margin-left: 10%;
+}
+.menu__mid {
+  background-color: gray;
+  height: 48vh;
+  width: 99.5%;
+}
+.menu__mid__contents {
+  display: flex;
+  align-items: normal;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: 100%;
+}
+.menu__mid__contents__left {
+  padding-right: 3vw;
+  width: 100%;
+  background-color: white;
+}
+.menu__mid__contents__left__calc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.menu__mid__contents__left__calc__image {
+  margin-top: 5%;
+  width: 3vw;
+  height: 6vh;
+}
+.menu__mid__contents__left__calc__text {
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 2vh;
+  font-weight: 100;
+}
+.menu__mid__contents__right {
+  background-color: #c7d8ef;
+  width: 100%;
+  padding-right: 3vw;
+}
+.menu__mid__contents__right__calc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.menu__mid__contents__right__calc__image {
+  margin-top: 5%;
+  width: 3vw;
+  height: 6vh;
+}
+.menu__mid__contents__right__calc__text {
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 2vh;
+  font-weight: 100;
+}
+.menu__footer {
+  background: linear-gradient(to bottom, #3f8cf3 0%, #3a6dda 25%, #245edc 50%, #245edc 100%) center/cover no-repeat;
+  height: 6vh;
+  width: 100%;
 }
 
 .taskbar {
@@ -48,8 +139,10 @@ body {
 }
 .taskbar__time__container {
   display: flex;
-  justify-content: end;
   align-items: center;
+  justify-content: end;
+  flex-direction: row;
+  flex-wrap: nowrap;
   width: 5%;
   background-color: #3f8cf3;
   background: linear-gradient(to bottom, #3f8cf3 0%, skyblue 10%, #3f8cf3 20%, #3f8cf3 90%, #3f8cf3 100%) center/cover no-repeat;
