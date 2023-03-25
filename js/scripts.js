@@ -10,19 +10,22 @@ function updateClock() {
 }
 updateClock();
 
-const createHTMLEl = (elementType, textToCreate, className, parentNode) => {
-    const newTag = document.createElement(elementType);
-    newTag.classList.add(className);
-    const newText = document.createTextNode(textToCreate);
-    newTag.appendChild(newText);
-    parentNode.appendChild(newTag);
+const createMenuHTML = () => {
+    const divTag = document.createElement("div");
+    divTag.classList.add("menu__container");
+    menuApp.appendChild(divTag);
+    const menuChild = document.getElementsByClassName("menu__container")[0];
+    menuChild.innerHTML += `
+        <div class="menu__header">
+            <img src="./assets/ball.jpg" class="menu__header__image" />
+        </div>`;
 };
 
 startBtn.addEventListener("click", () => {
     const menuChild = document.getElementsByClassName("menu__container")[0];
     if (!isMenuOpen) {
         startBtn.src = "./assets/buttons-3.png";
-        createHTMLEl("div", "", "menu__container", menuApp);
+        createMenuHTML();
         isMenuOpen = true;
     } else {
         if (menuChild) {
