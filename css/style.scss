@@ -28,8 +28,12 @@ body {
 
 .menu {
     // display: none;
+    cursor: default;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     &__container {
-        min-height: 64vh;
+        min-height: 62vh;
         min-width: 25vw;
         background-color: #3f8cf3;
         position: fixed;
@@ -73,7 +77,7 @@ body {
 
     &__mid {
         background-color: gray;
-        height: 48vh;
+        height: 47vh;
         width: 99.5%;
         &__contents {
             @include flex-opts(normal, space-between);
@@ -87,8 +91,8 @@ body {
                     @include flex-opts(center, flex-start);
                     margin: 0.2vw;
                     &__image {
-                        width: 2.7vw;
-                        height: 5vh;
+                        width: 2.4vw;
+                        height: 4.6vh;
                     }
                     &__text {
                         font-family: "Libre Franklin", sans-serif;
@@ -113,8 +117,8 @@ body {
                     margin: 0.2vw;
                     &__image {
                         margin-top: 1%;
-                        width: 1.8vw;
-                        height: 3.6vh;
+                        width: 1.5vw;
+                        height: 3vh;
                     }
                     &__text {
                         font-family: "Libre Franklin", sans-serif;
@@ -141,10 +145,30 @@ body {
                 #245edc 100%
             )
             center/cover no-repeat;
-        height: 6vh;
+        height: 4vh;
         width: 100%;
-        // &__contents {
-        // }
+        &__contents {
+            @include flex-opts(center, flex-end);
+            &__item {
+                @include flex-opts(center, flex-start);
+                margin: 0.2vw 0.5vw;
+                &__image {
+                    margin-top: 1%;
+                    width: 1.125vw;
+                    height: 2.25vh;
+                }
+                &__text {
+                    font-family: "Libre Franklin", sans-serif;
+                    font-size: 1.4vh;
+                    font-weight: 300;
+                    margin-left: 0.3vw;
+                    color: white;
+                }
+            }
+            &__item:hover {
+                background-color: #1941a5;
+            }
+        }
     }
 }
 

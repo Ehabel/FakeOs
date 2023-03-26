@@ -25,6 +25,83 @@ const menuHTML = `
                 Calculator
             </p>
         </div>
+        <div class="menu__mid__contents__left__item">
+            <img
+                src="./assets/cal.png"
+                class="menu__mid__contents__left__item__image"
+            />
+            <p
+                class="menu__mid__contents__left__item__text"
+            >
+                Calculator
+            </p>
+        </div>
+        <div class="menu__mid__contents__left__item">
+            <img
+                src="./assets/cal.png"
+                class="menu__mid__contents__left__item__image"
+            />
+            <p
+                class="menu__mid__contents__left__item__text"
+            >
+                Calculator
+            </p>
+        </div>
+        <div class="menu__mid__contents__left__item">
+            <img
+                src="./assets/cal.png"
+                class="menu__mid__contents__left__item__image"
+            />
+            <p
+                class="menu__mid__contents__left__item__text"
+            >
+                Calculator
+            </p>
+        </div>
+        <div class="menu__mid__contents__left__item">
+            <img
+                src="./assets/cal.png"
+                class="menu__mid__contents__left__item__image"
+            />
+            <p
+                class="menu__mid__contents__left__item__text"
+            >
+                Calculator
+            </p>
+        </div>
+        <div class="menu__mid__contents__left__item">
+            <img
+                src="./assets/cal.png"
+                class="menu__mid__contents__left__item__image"
+            />
+            <p
+                class="menu__mid__contents__left__item__text"
+            >
+                Calculator
+            </p>
+        </div>
+        <div class="menu__mid__contents__left__item">
+            <img
+                src="./assets/cal.png"
+                class="menu__mid__contents__left__item__image"
+            />
+            <p
+                class="menu__mid__contents__left__item__text"
+            >
+                Calculator
+            </p>
+        </div>
+        <div class="menu__mid__contents__left__item">
+            <img
+                src="./assets/cal.png"
+                class="menu__mid__contents__left__item__image"
+            />
+            <p
+                class="menu__mid__contents__left__item__text"
+            >
+                Calculator
+            </p>
+        </div>
     </div>
     <div class="menu__mid__contents__right">
         <div class="menu__mid__contents__right__item">
@@ -71,11 +148,122 @@ const menuHTML = `
                 My Music
             </p>
         </div>
+        <div class="menu__mid__contents__right__item">
+            <img
+                src="./assets/mypc.png"
+                class="menu__mid__contents__right__item__image"
+            />
+            <p
+                class="menu__mid__contents__right__item__text"
+            >
+                My Computer
+            </p>
+        </div>
+        <div class="menu__mid__contents__right__item">
+            <img
+                src="./assets/ctrlpnl.png"
+                class="menu__mid__contents__right__item__image"
+            />
+            <p
+                class="menu__mid__contents__right__item__text"
+            >
+                Control Panel
+            </p>
+        </div>
+        <div class="menu__mid__contents__right__item">
+            <img
+                src="./assets/default.png"
+                class="menu__mid__contents__right__item__image"
+            />
+            <p
+                class="menu__mid__contents__right__item__text"
+            >
+                Set Program Access and Defaults
+            </p>
+        </div>
+        <div class="menu__mid__contents__right__item">
+            <img
+                src="./assets/netconn.png"
+                class="menu__mid__contents__right__item__image"
+            />
+            <p
+                class="menu__mid__contents__right__item__text"
+            >
+                Connect to
+            </p>
+        </div>
+        <div class="menu__mid__contents__right__item">
+            <img
+                src="./assets/printfax.png"
+                class="menu__mid__contents__right__item__image"
+            />
+            <p
+                class="menu__mid__contents__right__item__text"
+            >
+                Printers and Faxes
+            </p>
+        </div>
+        <div class="menu__mid__contents__right__item">
+            <img
+                src="./assets/help.png"
+                class="menu__mid__contents__right__item__image"
+            />
+            <p
+                class="menu__mid__contents__right__item__text"
+            >
+                Help and Support
+            </p>
+        </div>
+        <div class="menu__mid__contents__right__item">
+            <img
+                src="./assets/search.png"
+                class="menu__mid__contents__right__item__image"
+            />
+            <p
+                class="menu__mid__contents__right__item__text"
+            >
+                Search
+            </p>
+        </div>
+        <div class="menu__mid__contents__right__item">
+            <img
+                src="./assets/run.png"
+                class="menu__mid__contents__right__item__image"
+            />
+            <p
+                class="menu__mid__contents__right__item__text"
+            >
+                Run
+            </p>
+        </div>
     </div>
 </div>
 </div>
 <div class="menu__footer">
-<div class="menu__footer__contents"></div>
+<div class="menu__footer__contents">
+<div class="menu__footer__contents__item">
+        <img
+            src="./assets/logout.png"
+            class="menu__footer__contents__item__image"
+        />
+        <p
+            class="menu__footer__contents__item__text"
+        >
+            Logout
+        </p>
+    </div>
+    <div class="menu__footer__contents__item">
+        <img
+            src="./assets/power.png"
+            class="menu__footer__contents__item__image"
+        />
+        <p
+            class="menu__footer__contents__item__text"
+        >
+            Turn Off Computer
+        </p>
+    </div>
+</div>
 </div>`;
 
 function updateClock() {

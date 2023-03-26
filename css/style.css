@@ -17,8 +17,14 @@ body {
   position: absolute;
 }
 
+.menu {
+  cursor: default;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 .menu__container {
-  min-height: 64vh;
+  min-height: 62vh;
   min-width: 25vw;
   background-color: #3f8cf3;
   position: fixed;
@@ -60,7 +66,7 @@ body {
 }
 .menu__mid {
   background-color: gray;
-  height: 48vh;
+  height: 47vh;
   width: 99.5%;
 }
 .menu__mid__contents {
@@ -86,8 +92,8 @@ body {
   margin: 0.2vw;
 }
 .menu__mid__contents__left__item__image {
-  width: 2.7vw;
-  height: 5vh;
+  width: 2.4vw;
+  height: 4.6vh;
 }
 .menu__mid__contents__left__item__text {
   font-family: "Libre Franklin", sans-serif;
@@ -115,8 +121,8 @@ body {
 }
 .menu__mid__contents__right__item__image {
   margin-top: 1%;
-  width: 1.8vw;
-  height: 3.6vh;
+  width: 1.5vw;
+  height: 3vh;
 }
 .menu__mid__contents__right__item__text {
   font-family: "Libre Franklin", sans-serif;
@@ -130,8 +136,38 @@ body {
 }
 .menu__footer {
   background: linear-gradient(to bottom, #3f8cf3 0%, #3a6dda 25%, #245edc 50%, #245edc 100%) center/cover no-repeat;
-  height: 6vh;
+  height: 4vh;
   width: 100%;
+}
+.menu__footer__contents {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.menu__footer__contents__item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin: 0.2vw 0.5vw;
+}
+.menu__footer__contents__item__image {
+  margin-top: 1%;
+  width: 1.125vw;
+  height: 2.25vh;
+}
+.menu__footer__contents__item__text {
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 1.4vh;
+  font-weight: 300;
+  margin-left: 0.3vw;
+  color: white;
+}
+.menu__footer__contents__item:hover {
+  background-color: #1941a5;
 }
 
 .taskbar {
