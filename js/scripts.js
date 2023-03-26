@@ -14,28 +14,61 @@ const menuHTML = `
 <div class="menu__mid">
 <div class="menu__mid__contents">
     <div class="menu__mid__contents__left">
-        <div class="menu__mid__contents__left__calc">
+        <div class="menu__mid__contents__left__item">
             <img
                 src="./assets/cal.png"
-                class="menu__mid__contents__left__calc__image"
+                class="menu__mid__contents__left__item__image"
             />
             <p
-                class="menu__mid__contents__left__calc__text"
+                class="menu__mid__contents__left__item__text"
             >
                 Calculator
             </p>
         </div>
     </div>
     <div class="menu__mid__contents__right">
-        <div class="menu__mid__contents__right__calc">
+        <div class="menu__mid__contents__right__item">
             <img
-                src="./assets/cal.png"
-                class="menu__mid__contents__right__calc__image"
+                src="./assets/mydocs.png"
+                class="menu__mid__contents__right__item__image"
             />
             <p
-                class="menu__mid__contents__right__calc__text"
+                class="menu__mid__contents__right__item__text"
             >
-                Calculator
+                My documents
+            </p>
+        </div>
+        <div class="menu__mid__contents__right__item">
+            <img
+                src="./assets/recentdocs.png"
+                class="menu__mid__contents__right__item__image"
+            />
+            <p
+                class="menu__mid__contents__right__item__text"
+            >
+                My Recent documents
+            </p>
+        </div>
+        <div class="menu__mid__contents__right__item">
+            <img
+                src="./assets/mypics.png"
+                class="menu__mid__contents__right__item__image"
+            />
+            <p
+                class="menu__mid__contents__right__item__text"
+            >
+                My Pictures
+            </p>
+        </div>
+        <div class="menu__mid__contents__right__item">
+            <img
+                src="./assets/mymusic.png"
+                class="menu__mid__contents__right__item__image"
+            />
+            <p
+                class="menu__mid__contents__right__item__text"
+            >
+                My Music
             </p>
         </div>
     </div>
@@ -47,7 +80,9 @@ const menuHTML = `
 
 function updateClock() {
     let now = new Date();
-    let time = now.getHours() + ":" + ("0" + now.getMinutes()).slice(-2);
+    let hours = now.getHours();
+    let AmOrPm = hours >= 12 ? "pm" : "am";
+    let time = `${hours % 12}:${("0" + now.getMinutes()).slice(-2)} ${AmOrPm}`;
     document.querySelector(".taskbar__time").textContent = time;
     setTimeout(updateClock, 1000);
 }

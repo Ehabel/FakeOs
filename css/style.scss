@@ -29,7 +29,7 @@ body {
 .menu {
     // display: none;
     &__container {
-        min-height: 65vh;
+        min-height: 64vh;
         min-width: 25vw;
         background-color: #3f8cf3;
         position: fixed;
@@ -79,15 +79,16 @@ body {
             @include flex-opts(normal, space-between);
             height: 100%;
             &__left {
-                padding-right: 3vw;
                 width: 100%;
                 background-color: white;
-                &__calc {
-                    @include flex-opts(center, center);
+                border-top: 1px solid #245dda;
+                border-bottom: 1px solid #245dda;
+                &__item {
+                    @include flex-opts(center, flex-start);
+                    margin: 0.2vw;
                     &__image {
-                        margin-top: 5%;
-                        width: 3vw;
-                        height: 6vh;
+                        width: 2.7vw;
+                        height: 5vh;
                     }
                     &__text {
                         font-family: "Libre Franklin", sans-serif;
@@ -95,24 +96,37 @@ body {
                         font-weight: 100;
                     }
                 }
+                &__item:hover {
+                    background-color: #1941a5;
+                    color: white;
+                }
             }
 
             &__right {
                 background-color: #c7d8ef;
                 width: 100%;
-                padding-right: 3vw;
-                &__calc {
-                    @include flex-opts(center, center);
+                border-left: 1px solid #7aa5e0;
+                border-top: 1px solid #245dda;
+                border-bottom: 1px solid #245dda;
+                &__item {
+                    @include flex-opts(center, flex-start);
+                    margin: 0.2vw;
                     &__image {
-                        margin-top: 5%;
-                        width: 3vw;
-                        height: 6vh;
+                        margin-top: 1%;
+                        width: 1.8vw;
+                        height: 3.6vh;
                     }
                     &__text {
                         font-family: "Libre Franklin", sans-serif;
-                        font-size: 2vh;
-                        font-weight: 100;
+                        font-size: 1.4vh;
+                        font-weight: 600;
+                        margin-left: 0.3vw;
                     }
+                }
+
+                &__item:hover {
+                    background-color: #1941a5;
+                    color: white;
                 }
             }
         }
@@ -160,7 +174,7 @@ body {
     &__time {
         &__container {
             @include flex-opts(center, end);
-            width: 5%;
+            width: 7%;
             background-color: #3f8cf3;
             background: linear-gradient(
                     to bottom,
@@ -171,10 +185,16 @@ body {
                     #3f8cf3 100%
                 )
                 center/cover no-repeat;
+
+            &__img {
+                margin-top: 0.1vw;
+                width: 1vw;
+                height: 2vh;
+            }
         }
         font-size: 0.8vw;
-        padding-right: 25%;
         color: white;
+        margin: 0px 0.3vw;
     }
 
     &__start__button {

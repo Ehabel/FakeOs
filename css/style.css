@@ -18,7 +18,7 @@ body {
 }
 
 .menu__container {
-  min-height: 65vh;
+  min-height: 64vh;
   min-width: 25vw;
   background-color: #3f8cf3;
   position: fixed;
@@ -72,48 +72,61 @@ body {
   height: 100%;
 }
 .menu__mid__contents__left {
-  padding-right: 3vw;
   width: 100%;
   background-color: white;
+  border-top: 1px solid #245dda;
+  border-bottom: 1px solid #245dda;
 }
-.menu__mid__contents__left__calc {
+.menu__mid__contents__left__item {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: row;
   flex-wrap: nowrap;
+  margin: 0.2vw;
 }
-.menu__mid__contents__left__calc__image {
-  margin-top: 5%;
-  width: 3vw;
-  height: 6vh;
+.menu__mid__contents__left__item__image {
+  width: 2.7vw;
+  height: 5vh;
 }
-.menu__mid__contents__left__calc__text {
+.menu__mid__contents__left__item__text {
   font-family: "Libre Franklin", sans-serif;
   font-size: 2vh;
   font-weight: 100;
+}
+.menu__mid__contents__left__item:hover {
+  background-color: #1941a5;
+  color: white;
 }
 .menu__mid__contents__right {
   background-color: #c7d8ef;
   width: 100%;
-  padding-right: 3vw;
+  border-left: 1px solid #7aa5e0;
+  border-top: 1px solid #245dda;
+  border-bottom: 1px solid #245dda;
 }
-.menu__mid__contents__right__calc {
+.menu__mid__contents__right__item {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: row;
   flex-wrap: nowrap;
+  margin: 0.2vw;
 }
-.menu__mid__contents__right__calc__image {
-  margin-top: 5%;
-  width: 3vw;
-  height: 6vh;
+.menu__mid__contents__right__item__image {
+  margin-top: 1%;
+  width: 1.8vw;
+  height: 3.6vh;
 }
-.menu__mid__contents__right__calc__text {
+.menu__mid__contents__right__item__text {
   font-family: "Libre Franklin", sans-serif;
-  font-size: 2vh;
-  font-weight: 100;
+  font-size: 1.4vh;
+  font-weight: 600;
+  margin-left: 0.3vw;
+}
+.menu__mid__contents__right__item:hover {
+  background-color: #1941a5;
+  color: white;
 }
 .menu__footer {
   background: linear-gradient(to bottom, #3f8cf3 0%, #3a6dda 25%, #245edc 50%, #245edc 100%) center/cover no-repeat;
@@ -134,8 +147,8 @@ body {
 }
 .taskbar__time {
   font-size: 0.8vw;
-  padding-right: 25%;
   color: white;
+  margin: 0px 0.3vw;
 }
 .taskbar__time__container {
   display: flex;
@@ -143,9 +156,14 @@ body {
   justify-content: end;
   flex-direction: row;
   flex-wrap: nowrap;
-  width: 5%;
+  width: 7%;
   background-color: #3f8cf3;
   background: linear-gradient(to bottom, #3f8cf3 0%, skyblue 10%, #3f8cf3 20%, #3f8cf3 90%, #3f8cf3 100%) center/cover no-repeat;
+}
+.taskbar__time__container__img {
+  margin-top: 0.1vw;
+  width: 1vw;
+  height: 2vh;
 }
 .taskbar__start__button {
   cursor: pointer;
