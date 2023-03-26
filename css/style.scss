@@ -79,9 +79,25 @@ body {
         background-color: gray;
         height: 47vh;
         width: 99.5%;
+        position: relative;
         &__contents {
             @include flex-opts(normal, space-between);
             height: 100%;
+            &__orange__sep {
+                position: absolute;
+                left: 0px;
+                right: 0px;
+                top: 0px;
+                display: block;
+                height: 2px;
+                background: linear-gradient(
+                    to right,
+                    rgba(0, 0, 0, 0) 0%,
+                    rgb(218, 136, 74) 50%,
+                    rgba(0, 0, 0, 0) 100%
+                );
+                border: 0px;
+            }
             &__left {
                 width: 100%;
                 background-color: white;
@@ -96,11 +112,42 @@ body {
                     }
                     &__text {
                         font-family: "Libre Franklin", sans-serif;
-                        font-size: 2vh;
+                        font-size: 1.6vh;
                         font-weight: 100;
                     }
                 }
-                &__item:hover {
+                &__all {
+                    @include flex-opts(center, center);
+                    &__text {
+                        font-family: "Libre Franklin", sans-serif;
+                        font-size: 1.6vh;
+                        font-weight: 100;
+                        text-align: center;
+                    }
+                    &__image {
+                        width: 1.5vw;
+                        height: 3vh;
+                    }
+                }
+
+                &__separator {
+                    height: 0.2vh;
+                    background: linear-gradient(
+                            to right,
+                            rgba(0, 0, 0, 0) 0%,
+                            rgba(0, 0, 0, 0.1) 50%,
+                            rgba(0, 0, 0, 0) 100%
+                        )
+                        content-box;
+                    border-top: 3px solid transparent;
+                    border-bottom: 3px solid transparent;
+                    &__two {
+                        margin: 2vh 0 0 0;
+                    }
+                }
+
+                &__item:hover,
+                &__all:hover {
                     background-color: #1941a5;
                     color: white;
                 }
@@ -126,6 +173,19 @@ body {
                         font-weight: 600;
                         margin-left: 0.3vw;
                     }
+                }
+
+                &__separator {
+                    height: 0.2vh;
+                    background: linear-gradient(
+                            to right,
+                            rgba(0, 0, 0, 0) 0%,
+                            rgba(135, 179, 226, 0.71) 50%,
+                            rgba(0, 0, 0, 0) 100%
+                        )
+                        content-box;
+                    border-top: 3px solid transparent;
+                    border-bottom: 3px solid transparent;
                 }
 
                 &__item:hover {

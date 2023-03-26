@@ -13,16 +13,84 @@ const menuHTML = `
 </div>
 <div class="menu__mid">
 <div class="menu__mid__contents">
+<div class="menu__mid__contents__orange__sep"></div>
     <div class="menu__mid__contents__left">
         <div class="menu__mid__contents__left__item">
             <img
-                src="./assets/cal.png"
+                src="./assets/ie.png"
                 class="menu__mid__contents__left__item__image"
             />
             <p
                 class="menu__mid__contents__left__item__text"
             >
-                Calculator
+                Internet Explorer
+            </p>
+        </div>
+        <div class="menu__mid__contents__left__item">
+            <img
+                src="./assets/email.png"
+                class="menu__mid__contents__left__item__image"
+            />
+            <p
+                class="menu__mid__contents__left__item__text"
+            >
+                Email
+            </p>
+        </div>
+        <div class="menu__mid__contents__left__separator"></div>
+        <div class="menu__mid__contents__left__item">
+            <img
+                src="./assets/cmd.png"
+                class="menu__mid__contents__left__item__image"
+            />
+            <p
+                class="menu__mid__contents__left__item__text"
+            >
+                Command Prompt
+            </p>
+        </div>
+        <div class="menu__mid__contents__left__item">
+            <img
+                src="./assets/MSN.png"
+                class="menu__mid__contents__left__item__image"
+            />
+            <p
+                class="menu__mid__contents__left__item__text"
+            >
+                MSN
+            </p>
+        </div>
+        <div class="menu__mid__contents__left__item">
+            <img
+                src="./assets/wmp.png"
+                class="menu__mid__contents__left__item__image"
+            />
+            <p
+                class="menu__mid__contents__left__item__text"
+            >
+                Windows Media Player
+            </p>
+        </div>
+        <div class="menu__mid__contents__left__item">
+            <img
+                src="./assets/wmsg.png"
+                class="menu__mid__contents__left__item__image"
+            />
+            <p
+                class="menu__mid__contents__left__item__text"
+            >
+                Windows Messenger
+            </p>
+        </div>
+        <div class="menu__mid__contents__left__item">
+            <img
+                src="./assets/npad.png"
+                class="menu__mid__contents__left__item__image"
+            />
+            <p
+                class="menu__mid__contents__left__item__text"
+            >
+                Notepad
             </p>
         </div>
         <div class="menu__mid__contents__left__item">
@@ -36,71 +104,17 @@ const menuHTML = `
                 Calculator
             </p>
         </div>
-        <div class="menu__mid__contents__left__item">
-            <img
-                src="./assets/cal.png"
-                class="menu__mid__contents__left__item__image"
-            />
+        <div class="menu__mid__contents__left__separator menu__mid__contents__left__separator__two"></div>
+        <div class="menu__mid__contents__left__all">
             <p
-                class="menu__mid__contents__left__item__text"
+                class="menu__mid__contents__left__all__text"
             >
-                Calculator
-            </p>
-        </div>
-        <div class="menu__mid__contents__left__item">
+                All programs
+            </p>    
             <img
-                src="./assets/cal.png"
-                class="menu__mid__contents__left__item__image"
+                src="./assets/allpgms.ico"
+                class="menu__mid__contents__left__all__image"
             />
-            <p
-                class="menu__mid__contents__left__item__text"
-            >
-                Calculator
-            </p>
-        </div>
-        <div class="menu__mid__contents__left__item">
-            <img
-                src="./assets/cal.png"
-                class="menu__mid__contents__left__item__image"
-            />
-            <p
-                class="menu__mid__contents__left__item__text"
-            >
-                Calculator
-            </p>
-        </div>
-        <div class="menu__mid__contents__left__item">
-            <img
-                src="./assets/cal.png"
-                class="menu__mid__contents__left__item__image"
-            />
-            <p
-                class="menu__mid__contents__left__item__text"
-            >
-                Calculator
-            </p>
-        </div>
-        <div class="menu__mid__contents__left__item">
-            <img
-                src="./assets/cal.png"
-                class="menu__mid__contents__left__item__image"
-            />
-            <p
-                class="menu__mid__contents__left__item__text"
-            >
-                Calculator
-            </p>
-        </div>
-        <div class="menu__mid__contents__left__item">
-            <img
-                src="./assets/cal.png"
-                class="menu__mid__contents__left__item__image"
-            />
-            <p
-                class="menu__mid__contents__left__item__text"
-            >
-                Calculator
-            </p>
         </div>
     </div>
     <div class="menu__mid__contents__right">
@@ -159,6 +173,7 @@ const menuHTML = `
                 My Computer
             </p>
         </div>
+        <div class="menu__mid__contents__right__separator"></div>
         <div class="menu__mid__contents__right__item">
             <img
                 src="./assets/ctrlpnl.png"
@@ -203,6 +218,7 @@ const menuHTML = `
                 Printers and Faxes
             </p>
         </div>
+        <div class="menu__mid__contents__right__separator"></div>
         <div class="menu__mid__contents__right__item">
             <img
                 src="./assets/help.png"
@@ -233,7 +249,7 @@ const menuHTML = `
             <p
                 class="menu__mid__contents__right__item__text"
             >
-                Run
+                Run...
             </p>
         </div>
     </div>

@@ -68,6 +68,7 @@ body {
   background-color: gray;
   height: 47vh;
   width: 99.5%;
+  position: relative;
 }
 .menu__mid__contents {
   display: flex;
@@ -76,6 +77,16 @@ body {
   flex-direction: row;
   flex-wrap: nowrap;
   height: 100%;
+}
+.menu__mid__contents__orange__sep {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  display: block;
+  height: 2px;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgb(218, 136, 74) 50%, rgba(0, 0, 0, 0) 100%);
+  border: 0px;
 }
 .menu__mid__contents__left {
   width: 100%;
@@ -97,10 +108,36 @@ body {
 }
 .menu__mid__contents__left__item__text {
   font-family: "Libre Franklin", sans-serif;
-  font-size: 2vh;
+  font-size: 1.6vh;
   font-weight: 100;
 }
-.menu__mid__contents__left__item:hover {
+.menu__mid__contents__left__all {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.menu__mid__contents__left__all__text {
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 1.6vh;
+  font-weight: 100;
+  text-align: center;
+}
+.menu__mid__contents__left__all__image {
+  width: 1.5vw;
+  height: 3vh;
+}
+.menu__mid__contents__left__separator {
+  height: 0.2vh;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0) 100%) content-box;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+}
+.menu__mid__contents__left__separator__two {
+  margin: 2vh 0 0 0;
+}
+.menu__mid__contents__left__item:hover, .menu__mid__contents__left__all:hover {
   background-color: #1941a5;
   color: white;
 }
@@ -129,6 +166,12 @@ body {
   font-size: 1.4vh;
   font-weight: 600;
   margin-left: 0.3vw;
+}
+.menu__mid__contents__right__separator {
+  height: 0.2vh;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(135, 179, 226, 0.71) 50%, rgba(0, 0, 0, 0) 100%) content-box;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
 }
 .menu__mid__contents__right__item:hover {
   background-color: #1941a5;
