@@ -1,4 +1,3 @@
-import { menuHTML } from "../modules/boiler.js";
 import { createHTMLElem } from "../modules/create-elem-utils.js";
 import {
     createMenuHeaderHtml,
@@ -26,7 +25,6 @@ const createMenuHTML = () => {
     const menuContainer = createHTMLElem("div", "menu__container", menuApp);
     createMenuHeaderHtml(menuContainer);
     createMenuMidHtml(menuContainer);
-    // menuContainer.innerHTML += menuHTML;
     createMenuFooterHtml(menuContainer);
 };
 

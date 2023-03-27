@@ -103,6 +103,7 @@ const createMenuMidHtml = (container) => {
         "../assets/cmd.png",
         "Command Prompt"
     );
+    createMenuMidItemHtml(menuMidContentsLeft, "../assets/MSN.png", "MSN");
     createMenuMidItemHtml(
         menuMidContentsLeft,
         "../assets/wmp.png",
