@@ -1,25 +1,31 @@
 import { menuHTML } from "../modules/boiler.js";
+import { createHTMLElem } from "../modules/create-elem-utils.js";
+import {
+    createMenuHeaderHtml,
+    createMenuFooterHtml,
+} from "../modules/menu-utils.js";
 
 const startBtn = document.querySelector(".taskbar__start__button");
 const menuApp = document.querySelector(".menu");
 let isMenuOpen = false;
 
-function updateClock() {
+const updateClock = () => {
     let now = new Date();
     let hours = now.getHours();
     let AmOrPm = hours >= 12 ? "pm" : "am";
-    let time = `${hours % 12}:${("0" + now.getMinutes()).slice(-2)} ${AmOrPm}`;
+    let time = `${hours % 12 || 12}:${("0" + now.getMinutes()).slice(
+        -2
+    )} ${AmOrPm}`;
     document.querySelector(".taskbar__time").textContent = time;
     setTimeout(updateClock, 1000);
-}
+};
 updateClock();
 
 const createMenuHTML = () => {
-    const divTag = document.createElement("div");
-    divTag.classList.add("menu__container");
-    menuApp.appendChild(divTag);
-    const menuChild = document.getElementsByClassName("menu__container")[0];
-    menuChild.innerHTML += menuHTML;
+    const menuContainer = createHTMLElem("div", "menu__container", menuApp);
+    createMenuHeaderHtml(menuContainer);
+    menuContainer.innerHTML += menuHTML;
+    createMenuFooterHtml(menuContainer);
 };
 
 startBtn.addEventListener("click", () => {

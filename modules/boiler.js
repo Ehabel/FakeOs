@@ -1,13 +1,4 @@
 export const menuHTML = `
-<div class="menu__header">
-<div class="menu__header__contents">
-    <img
-        src="./assets/ball.jpg"
-        class="menu__header__image"
-    />
-    <p class="menu__header__user">USER</p>
-</div>
-</div>
 <div class="menu__mid">
 <div class="menu__mid__contents">
 <div class="menu__mid__contents__orange__sep"></div>
@@ -249,32 +240,6 @@ export const menuHTML = `
                 Run...
             </p>
         </div>
-    </div>
-</div>
-</div>
-<div class="menu__footer">
-<div class="menu__footer__contents">
-<div class="menu__footer__contents__item">
-        <img
-            src="./assets/logout.png"
-            class="menu__footer__contents__item__image"
-        />
-        <p
-            class="menu__footer__contents__item__text"
-        >
-            Logout
-        </p>
-    </div>
-    <div class="menu__footer__contents__item">
-        <img
-            src="./assets/power.png"
-            class="menu__footer__contents__item__image"
-        />
-        <p
-            class="menu__footer__contents__item__text"
-        >
-            Turn Off Computer
-        </p>
     </div>
 </div>
 </div>`;
