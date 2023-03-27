@@ -49,7 +49,6 @@ body {
 }
 
 .menu {
-    // display: none;
     cursor: default;
     -webkit-user-select: none;
     -ms-user-select: none;
@@ -253,10 +252,6 @@ body {
         }
     }
 }
-
-// .menu--show {
-//     display: block;
-// }
 
 .taskbar {
     display: flex;

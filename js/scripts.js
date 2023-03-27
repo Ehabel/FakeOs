@@ -33,7 +33,6 @@ const createMenuHTML = () => {
 
 startBtn.addEventListener("click", () => {
     const menuChild = document.getElementsByClassName("menu__container")[0];
-    // menuApp.classList.toggle("menu--show");
     if (!isMenuOpen) {
         startBtn.src = "./assets/buttons-3.png";
         createMenuHTML();
