@@ -5,6 +5,14 @@ const createHTMLElem = (tag, classAdd, parentNode) => {
     return tagName;
 };
 
+const createHTMLElemMultiClass = (tag, classAdd, classTwo, parentNode) => {
+    const tagName = document.createElement(tag);
+    tagName.classList.add(classAdd);
+    tagName.classList.add(classTwo);
+    parentNode.appendChild(tagName);
+    return tagName;
+};
+
 const createImgElem = (classAdd, src, parentNode) => {
     const tagName = document.createElement("img");
     tagName.classList.add(classAdd);
@@ -21,4 +29,4 @@ const createPElem = (classAdd, text, parentNode) => {
     return tagName;
 };
 
-export { createHTMLElem, createImgElem, createPElem };
+export { createHTMLElem, createHTMLElemMultiClass, createImgElem, createPElem };
