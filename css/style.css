@@ -15,6 +15,32 @@ body {
   min-height: 100vh;
   min-width: 100vw;
   position: absolute;
+  z-index: -1;
+}
+.container__item {
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  position: absolute;
+  width: 4vw;
+  height: 8vh;
+  margin: 5vh 0 0 1vw;
+}
+.container__item__image {
+  width: 3vw;
+  height: 6vh;
+}
+.container__item__text {
+  font-family: "Libre Franklin", sans-serif;
+  font-size: small;
+  color: white;
+  text-shadow: 0.1vh 0.1vw 0 black;
+}
+.container__item__text--clicked {
+  background-color: #1941a5;
 }
 
 .menu {
