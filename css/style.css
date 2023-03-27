@@ -135,7 +135,7 @@ body {
   border-bottom: 3px solid transparent;
 }
 .menu__mid__contents__left__separator__two {
-  margin: 2vh 0 0 0;
+  margin: 1.5vh 0 0 0;
 }
 .menu__mid__contents__left__item:hover, .menu__mid__contents__left__all:hover {
   background-color: #1941a5;
