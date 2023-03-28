@@ -43,6 +43,7 @@ body {
   background-color: #1941a5;
 }
 .container__notepad {
+  cursor: default;
   position: absolute;
   left: 5vw;
   top: 10vh;
@@ -91,6 +92,7 @@ body {
   padding-right: 0.5%;
 }
 .container__notepad__header__buttons__button {
+  cursor: pointer;
   width: 1.2vw;
   height: 2.4vh;
 }

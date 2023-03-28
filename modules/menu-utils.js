@@ -38,6 +38,25 @@ const createMenuMidItemHtml = (container, src, text) => {
     );
 };
 
+const createMenuMidItemClickable = (container, src, text, appName) => {
+    const menuMidContentsLeftItem = createHTMLElemMultiClass(
+        "div",
+        "menu__mid__contents__left__item",
+        `menu__mid__contents__left__item__${appName}`,
+        container
+    );
+    createImgElem(
+        "menu__mid__contents__left__item__image",
+        src,
+        menuMidContentsLeftItem
+    );
+    createPElem(
+        "menu__mid__contents__left__item__text",
+        text,
+        menuMidContentsLeftItem
+    );
+};
+
 const createMenuMidRightItemHtml = (container, src, text) => {
     const menuMidContentsLeftItem = createHTMLElem(
         "div",
@@ -114,7 +133,12 @@ const createMenuMidHtml = (container) => {
         "../assets/wmsg.png",
         "Windows Messenger"
     );
-    createMenuMidItemHtml(menuMidContentsLeft, "../assets/npad.png", "Notepad");
+    createMenuMidItemClickable(
+        menuMidContentsLeft,
+        "../assets/npad.png",
+        "Notepad",
+        "notepad"
+    );
     createMenuMidItemHtml(
         menuMidContentsLeft,
         "../assets/cal.png",

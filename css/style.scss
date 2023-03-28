@@ -47,6 +47,7 @@ body {
         }
     }
     &__notepad {
+        cursor: default;
         position: absolute;
         left: 5vw;
         top: 10vh;
@@ -93,6 +94,7 @@ body {
                 @include flex-opts(center, center);
                 padding-right: 0.5%;
                 &__button {
+                    cursor: pointer;
                     width: 1.2vw;
                     height: 2.4vh;
                 }

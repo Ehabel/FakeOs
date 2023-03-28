@@ -11,8 +11,12 @@ const menuApp = document.querySelector(".menu");
 const desktop = document.querySelector(".container");
 const notepadApp = document.querySelector(".container__item");
 const notepadAppText = document.querySelector(".container__item__text");
+const notepadMenuItem = document.getElementsByClassName(
+    "menu__mid__contents__left__item__notepad"
+);
 const exitButton = document.getElementsByClassName("exit__button");
 let isMenuOpen = false;
+let notePadOpen = false;
 let counterNotepad = 0;
 
 const updateClock = () => {
@@ -59,11 +63,10 @@ notepadApp.addEventListener("dblclick", (event) => {
     if (notepadAppText.classList.contains("container__item__text--clicked")) {
         notepadAppText.classList.remove("container__item__text--clicked");
     }
-    counterNotepad = createNotepadApp(desktop, counterNotepad);
-
-    // if (!notePadOpen) {
-    //     createNotepadApp(desktop);
-    // }
+    if (!notePadOpen) {
+        counterNotepad = createNotepadApp(desktop, counterNotepad);
+        notePadOpen = true;
+    }
 });
 
 desktop.addEventListener("click", () => {
@@ -74,12 +77,22 @@ desktop.addEventListener("click", () => {
 
 setInterval(() => {
     if (exitButton.length >= 1) {
-        for (let i = 0; i < exitButton.length; i++) {
-            exitButton[i].addEventListener("click", () => {
-                desktop.removeChild(
-                    document.querySelector(".container__notepad")
+        exitButton[0].addEventListener("click", () => {
+            desktop.removeChild(document.querySelector(".container__notepad"));
+            notePadOpen = false;
+        });
+    }
+    if (notepadMenuItem.length >= 1) {
+        notepadMenuItem[0].addEventListener("click", () => {
+            if (!notePadOpen) {
+                startBtn.src = "./assets/buttons-1.png";
+                counterNotepad = createNotepadApp(desktop, counterNotepad);
+                notePadOpen = true;
+                isMenuOpen = false;
+                menuApp.removeChild(
+                    document.getElementsByClassName("menu__container")[0]
                 );
-            });
-        }
+            }
+        });
     }
 }, 500);
