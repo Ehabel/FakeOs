@@ -4,19 +4,25 @@ import {
     createMenuMidHtml,
     createMenuFooterHtml,
 } from "../modules/menu-utils.js";
-import { createNotepadApp } from "../modules/app-utils.js";
+import { createIEApp, createNotepadApp } from "../modules/app-utils.js";
 
 const startBtn = document.querySelector(".taskbar__start__button");
 const menuApp = document.querySelector(".menu");
 const desktop = document.querySelector(".container");
-const notepadApp = document.querySelector(".container__item");
-const notepadAppText = document.querySelector(".container__item__text");
+const notepadApp = document.querySelector(".app__notepad");
+const notepadAppText = document.querySelector(".app__notepad__item__text");
 const notepadMenuItem = document.getElementsByClassName(
     "menu__mid__contents__left__item__notepad"
 );
+const ieApp = document.querySelector(".app__ie");
+const ieAppText = document.querySelector(".app__ie__item__text");
+// const ieMenuItem = document.getElementsByClassName(
+//     "menu__mid__contents__left__item__notepad"
+// );
 const exitButton = document.getElementsByClassName("exit__button");
 let isMenuOpen = false;
 let notePadOpen = false;
+let ieOpen = false;
 let counterNotepad = 0;
 
 const updateClock = () => {
@@ -54,6 +60,9 @@ startBtn.addEventListener("click", () => {
 });
 
 notepadApp.addEventListener("click", (event) => {
+    if (ieAppText.classList.contains("container__item__text--clicked")) {
+        ieAppText.classList.remove("container__item__text--clicked");
+    }
     event.stopPropagation();
     notepadAppText.classList.add("container__item__text--clicked");
 });
@@ -69,17 +78,49 @@ notepadApp.addEventListener("dblclick", (event) => {
     }
 });
 
-desktop.addEventListener("click", () => {
+ieApp.addEventListener("click", (event) => {
     if (notepadAppText.classList.contains("container__item__text--clicked")) {
         notepadAppText.classList.remove("container__item__text--clicked");
     }
+    event.stopPropagation();
+    ieAppText.classList.add("container__item__text--clicked");
+});
+
+ieApp.addEventListener("dblclick", (event) => {
+    event.stopPropagation();
+    if (ieApp.classList.contains("container__item__text--clicked")) {
+        ieApp.classList.remove("container__item__text--clicked");
+    }
+    if (!ieOpen) {
+        createIEApp(desktop);
+        ieOpen = true;
+    }
+});
+
+desktop.addEventListener("click", () => {
+    const menuChild = document.getElementsByClassName("menu__container")[0];
+    if (notepadAppText.classList.contains("container__item__text--clicked")) {
+        notepadAppText.classList.remove("container__item__text--clicked");
+    }
+    if (ieAppText.classList.contains("container__item__text--clicked")) {
+        ieAppText.classList.remove("container__item__text--clicked");
+    }
+    if (menuChild) {
+        menuApp.removeChild(menuChild);
+    }
+    startBtn.src = "./assets/buttons-1.png";
+    isMenuOpen = false;
 });
 
 setInterval(() => {
     if (exitButton.length >= 1) {
         exitButton[0].addEventListener("click", () => {
-            desktop.removeChild(document.querySelector(".container__notepad"));
-            notePadOpen = false;
+            if (document.querySelector(".container__notepad")) {
+                desktop.removeChild(
+                    document.querySelector(".container__notepad")
+                );
+                notePadOpen = false;
+            }
         });
     }
     if (notepadMenuItem.length >= 1) {

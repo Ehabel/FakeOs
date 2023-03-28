@@ -8,6 +8,15 @@ body {
   height: 100%;
 }
 
+.app__container {
+  display: flex;
+  align-items: start;
+  justify-content: space-evenly;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: fit-content;
+}
+
 .container {
   background-image: url("../assets/windows.webp");
   background-repeat: no-repeat;
@@ -15,6 +24,7 @@ body {
   min-height: 100vh;
   min-width: 100vw;
   position: absolute;
+  cursor: default;
   z-index: -1;
 }
 .container__item {
@@ -24,7 +34,6 @@ body {
   justify-content: center;
   flex-direction: column;
   flex-wrap: nowrap;
-  position: absolute;
   width: 4vw;
   height: 8vh;
   margin: 5vh 0 0 1vw;
@@ -38,11 +47,12 @@ body {
   font-size: small;
   color: white;
   text-shadow: 0.1vh 0.1vw 0 black;
+  text-align: center;
 }
 .container__item__text--clicked {
   background-color: #1941a5;
 }
-.container__notepad {
+.container__default {
   cursor: default;
   position: absolute;
   left: 5vw;
@@ -53,7 +63,7 @@ body {
   flex-direction: column;
   flex-wrap: nowrap;
 }
-.container__notepad__header {
+.container__default__header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -65,7 +75,7 @@ body {
   background-color: #245dda;
   background: linear-gradient(rgb(0, 88, 238) 0%, rgb(53, 147, 255) 4%, rgb(40, 142, 255) 6%, rgb(18, 125, 255) 8%, rgb(3, 111, 252) 10%, rgb(2, 98, 238) 14%, rgb(0, 87, 229) 20%, rgb(0, 84, 227) 24%, rgb(0, 85, 235) 56%, rgb(0, 91, 245) 66%, rgb(2, 106, 254) 76%, rgb(0, 98, 239) 86%, rgb(0, 82, 214) 92%, rgb(0, 64, 171) 94%, rgb(0, 48, 146) 100%) center/cover no-repeat;
 }
-.container__notepad__header__icons {
+.container__default__header__icons {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -73,17 +83,17 @@ body {
   flex-wrap: nowrap;
   padding-left: 0.2vw;
 }
-.container__notepad__header__icons__img {
+.container__default__header__icons__img {
   width: 1vw;
   height: 2vh;
 }
-.container__notepad__header__icons__text {
+.container__default__header__icons__text {
   font-family: "Libre Franklin", sans-serif;
   font-size: small;
   color: white;
   text-shadow: 0.1vh 0.1vw 0 black;
 }
-.container__notepad__header__buttons {
+.container__default__header__buttons {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -91,12 +101,12 @@ body {
   flex-wrap: nowrap;
   padding-right: 0.2vw;
 }
-.container__notepad__header__buttons__button {
+.container__default__header__buttons__button {
   cursor: pointer;
   width: 1.2vw;
   height: 2.4vh;
 }
-.container__notepad__options__header {
+.container__default__options__header {
   background-color: ghostwhite;
   width: calc(100% - 6px);
   border-left: 3px solid rgb(8, 49, 217);
@@ -107,11 +117,11 @@ body {
   flex-direction: row;
   flex-wrap: nowrap;
 }
-.container__notepad__options__header__text {
+.container__default__options__header__text {
   font-size: small;
   margin: 0 0.1vw 0 0.5vw;
 }
-.container__notepad__options__header__text:hover {
+.container__default__options__header__text:hover {
   background-color: #1941a5;
   color: white;
 }
