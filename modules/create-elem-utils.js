@@ -21,6 +21,15 @@ const createImgElem = (classAdd, src, parentNode) => {
     return tagName;
 };
 
+const createImgElemMultiClass = (classAdd, classTwo, src, parentNode) => {
+    const tagName = document.createElement("img");
+    tagName.classList.add(classAdd);
+    tagName.classList.add(classTwo);
+    tagName.src = src;
+    parentNode.appendChild(tagName);
+    return tagName;
+};
+
 const createPElem = (classAdd, text, parentNode) => {
     const tagName = document.createElement("p");
     tagName.classList.add(classAdd);
@@ -29,4 +38,10 @@ const createPElem = (classAdd, text, parentNode) => {
     return tagName;
 };
 
-export { createHTMLElem, createHTMLElemMultiClass, createImgElem, createPElem };
+export {
+    createHTMLElem,
+    createHTMLElemMultiClass,
+    createImgElem,
+    createImgElemMultiClass,
+    createPElem,
+};

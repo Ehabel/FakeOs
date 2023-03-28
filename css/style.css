@@ -42,6 +42,98 @@ body {
 .container__item__text--clicked {
   background-color: #1941a5;
 }
+.container__notepad {
+  position: absolute;
+  left: 5vw;
+  top: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+.container__notepad__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  border-radius: 10px 10px 0 0;
+  width: 100%;
+  height: 3vh;
+  background-color: #245dda;
+  background: linear-gradient(rgb(0, 88, 238) 0%, rgb(53, 147, 255) 4%, rgb(40, 142, 255) 6%, rgb(18, 125, 255) 8%, rgb(3, 111, 252) 10%, rgb(2, 98, 238) 14%, rgb(0, 87, 229) 20%, rgb(0, 84, 227) 24%, rgb(0, 85, 235) 56%, rgb(0, 91, 245) 66%, rgb(2, 106, 254) 76%, rgb(0, 98, 239) 86%, rgb(0, 82, 214) 92%, rgb(0, 64, 171) 94%, rgb(0, 48, 146) 100%) center/cover no-repeat;
+}
+.container__notepad__header__icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding-left: 0.5%;
+}
+.container__notepad__header__icons__img {
+  width: 1vw;
+  height: 2vh;
+}
+.container__notepad__header__icons__text {
+  font-family: "Libre Franklin", sans-serif;
+  font-size: small;
+  color: white;
+  text-shadow: 0.1vh 0.1vw 0 black;
+}
+.container__notepad__header__buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding-right: 0.5%;
+}
+.container__notepad__header__buttons__button {
+  width: 1.2vw;
+  height: 2.4vh;
+}
+.container__notepad__options__header {
+  background-color: ghostwhite;
+  width: calc(100% - 6px);
+  border-left: 3px solid rgb(8, 49, 217);
+  border-right: 3px solid rgb(8, 49, 217);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.container__notepad__options__header__text {
+  font-size: small;
+  margin: 0 0.5% 0 0.5%;
+}
+.container__notepad__options__header__text:hover {
+  background-color: #1941a5;
+  color: white;
+}
+.container__notepad__textWrapper {
+  width: 100%;
+}
+.container__notepad__textarea {
+  border-left: 3px solid rgb(8, 49, 217);
+  border-right: 3px solid rgb(8, 49, 217);
+  border-bottom: 3px solid rgb(8, 49, 217);
+  min-width: 20vw;
+  min-height: 20vh;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.container__notepad__textarea:focus {
+  overflow: auto;
+  outline: none;
+  resize: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
 
 .menu {
   cursor: default;

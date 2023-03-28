@@ -46,6 +46,98 @@ body {
             }
         }
     }
+    &__notepad {
+        position: absolute;
+        left: 5vw;
+        top: 10vh;
+        @include flex-opts(center, center, column);
+        &__header {
+            @include flex-opts(center, space-between);
+            border-radius: 10px 10px 0 0;
+            width: 100%;
+            height: 3vh;
+            background-color: #245dda;
+            background: linear-gradient(
+                    rgb(0, 88, 238) 0%,
+                    rgb(53, 147, 255) 4%,
+                    rgb(40, 142, 255) 6%,
+                    rgb(18, 125, 255) 8%,
+                    rgb(3, 111, 252) 10%,
+                    rgb(2, 98, 238) 14%,
+                    rgb(0, 87, 229) 20%,
+                    rgb(0, 84, 227) 24%,
+                    rgb(0, 85, 235) 56%,
+                    rgb(0, 91, 245) 66%,
+                    rgb(2, 106, 254) 76%,
+                    rgb(0, 98, 239) 86%,
+                    rgb(0, 82, 214) 92%,
+                    rgb(0, 64, 171) 94%,
+                    rgb(0, 48, 146) 100%
+                )
+                center/cover no-repeat;
+            &__icons {
+                @include flex-opts(center, center);
+                padding-left: 0.5%;
+                &__img {
+                    width: 1vw;
+                    height: 2vh;
+                }
+                &__text {
+                    font-family: "Libre Franklin", sans-serif;
+                    font-size: small;
+                    color: white;
+                    text-shadow: 0.1vh 0.1vw 0 black;
+                }
+            }
+            &__buttons {
+                @include flex-opts(center, center);
+                padding-right: 0.5%;
+                &__button {
+                    width: 1.2vw;
+                    height: 2.4vh;
+                }
+            }
+        }
+        &__options {
+            &__header {
+                background-color: ghostwhite;
+                width: calc(100% - 6px);
+                border-left: 3px solid rgb(8, 49, 217);
+                border-right: 3px solid rgb(8, 49, 217);
+                @include flex-opts(center, flex-start);
+                &__text {
+                    font-size: small;
+                    margin: 0 0.5% 0 0.5%;
+                }
+                &__text:hover {
+                    background-color: #1941a5;
+                    color: white;
+                }
+            }
+        }
+        &__textWrapper {
+            width: 100%;
+        }
+        &__textarea {
+            border-left: 3px solid rgb(8, 49, 217);
+            border-right: 3px solid rgb(8, 49, 217);
+            border-bottom: 3px solid rgb(8, 49, 217);
+            min-width: 20vw;
+            min-height: 20vh;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        &__textarea:focus {
+            overflow: auto;
+            outline: none;
+            resize: none;
+
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+        }
+    }
 }
 
 .menu {
