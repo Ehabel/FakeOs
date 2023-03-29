@@ -121,12 +121,26 @@ body {
         }
         &__options {
             min-width: 60vw;
+            &__border {
+                height: 0.1vh;
+                width: calc(100% - 6px);
+                background-color: #ecebd9;
+                background: linear-gradient(
+                        to bottom,
+                        rgb(134, 127, 127) 0%,
+                        rgba(255, 255, 255, 1) 100%
+                    )
+                    center/cover no-repeat;
+                border-left: 3px solid rgb(8, 49, 217);
+                border-right: 3px solid rgb(8, 49, 217);
+            }
             &__header {
                 background-color: #ecebd9;
                 width: calc(100% - 6px);
                 border-left: 3px solid rgb(8, 49, 217);
                 border-right: 3px solid rgb(8, 49, 217);
                 @include flex-opts(center, flex-start);
+
                 &__text {
                     -webkit-user-select: none;
                     -ms-user-select: none;
@@ -140,7 +154,7 @@ body {
                 }
             }
             &__subheader {
-                height: 3.5vh;
+                height: 4.5vh;
                 background-color: #ecebd9;
                 border-left: 3px solid rgb(8, 49, 217);
                 border-right: 3px solid rgb(8, 49, 217);
@@ -149,7 +163,6 @@ body {
                 &__button {
                     margin: 0 0.25vw 0 0;
                     width: 1.5vw;
-                    height: 3vh;
                     border: 1px solid rgba(0, 0, 0, 0);
                     border-bottom: 2px solid rgba(0, 0, 0, 0);
                 }
@@ -160,17 +173,50 @@ body {
                 &__text {
                     margin: 0 0.4vw 0 0.1vw;
                 }
+                &__separator {
+                    height: 80%;
+                    width: 1px;
+                    background-color: rgba(0, 0, 0, 0.2);
+                    margin: 0px 2px;
+                }
+                &__addressbar {
+                    @include flex-opts(center, flex-start);
+                    background-color: #ecebd9;
+                    border-left: 3px solid rgb(8, 49, 217);
+                    border-right: 3px solid rgb(8, 49, 217);
+                    font-size: small;
+                    color: rgba(0, 0, 0, 0.4);
+                    &__text {
+                        margin: 0 0.5vw 0 0.5vw;
+                    }
+                    &__bar {
+                        width: 35vw;
+                        background: url(../assets/ie.png) no-repeat left;
+                        background-size: 1.2vh;
+                        background-color: white;
+                        padding-left: 20px;
+                        outline: none;
+                        border: 1px solid rgba(0, 0, 0, 0.3);
+                    }
+                }
             }
             &__subheaderback,
             &__subheaderforward {
                 filter: grayscale(100%);
                 @include flex-opts(center, center);
-                padding-right: 0.5vw;
+                margin-left: 0.1vw;
+                border: 1px solid rgba(0, 0, 0, 0);
+                border-bottom: 2px solid rgba(0, 0, 0, 0);
+            }
+            &__subheaderother {
+                @include flex-opts(center, center);
+                margin-left: 0.1vw;
                 border: 1px solid rgba(0, 0, 0, 0);
                 border-bottom: 2px solid rgba(0, 0, 0, 0);
             }
             &__subheaderback:hover,
-            &__subheaderforward:hover {
+            &__subheaderforward:hover,
+            &__subheaderother:hover {
                 border: 1px solid rgba(0, 0, 0, 0.1);
                 border-bottom: 2px solid rgba(0, 0, 0, 0.1);
             }

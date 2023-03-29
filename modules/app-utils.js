@@ -185,7 +185,11 @@ const createIEAppHeader = (ieContainer) => {
         "../assets/exit.png",
         ieHeaderButtons
     );
-
+    createHTMLElem(
+        "div",
+        "container__default__options__border",
+        ieHeaderOptions
+    );
     const ieOptionssubheader = createHTMLElem(
         "div",
         "container__default__options__subheader",
@@ -243,10 +247,72 @@ const createIEAppHeader = (ieContainer) => {
         "../assets/ie/ieHome.png",
         ieOptionssubheader
     );
-    createImgElem(
-        "container__default__options__subheader__button",
-        "../assets/search.png",
+    createHTMLElem(
+        "div",
+        "container__default__options__subheader__separator",
         ieOptionssubheader
+    );
+    const ieOptionssubheaderSearch = createHTMLElem(
+        "div",
+        "container__default__options__subheaderother",
+        ieOptionssubheader
+    );
+    createImgElem(
+        "container__default__options__subheader__other__button",
+        "../assets/search.png",
+        ieOptionssubheaderSearch
+    );
+    createPElem(
+        "container__default__options__subheader__text",
+        "Search",
+        ieOptionssubheaderSearch
+    );
+    const ieOptionssubheaderFavourites = createHTMLElem(
+        "div",
+        "container__default__options__subheaderother",
+        ieOptionssubheader
+    );
+    createImgElem(
+        "container__default__options__subheader__other__button",
+        "../assets/ie/favorites.png",
+        ieOptionssubheaderFavourites
+    );
+    createPElem(
+        "container__default__options__subheader__text",
+        "Favorites",
+        ieOptionssubheaderFavourites
+    );
+    createHTMLElem(
+        "div",
+        "container__default__options__subheader__separator",
+        ieOptionssubheader
+    );
+
+    createHTMLElem(
+        "div",
+        "container__default__options__border",
+        ieHeaderOptions
+    );
+    const addressBar = createHTMLElem(
+        "div",
+        "container__default__options__subheader__addressbar",
+        ieHeaderOptions
+    );
+    createPElem(
+        "container__default__options__subheader__addressbar__text",
+        "Address",
+        addressBar
+    );
+    const searchBar = createHTMLElem(
+        "input",
+        "container__default__options__subheader__addressbar__bar",
+        addressBar
+    );
+    searchBar.value = "https://www.google.com";
+    createHTMLElem(
+        "div",
+        "container__default__options__border",
+        ieHeaderOptions
     );
 };
 
