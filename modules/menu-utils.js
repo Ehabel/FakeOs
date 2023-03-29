@@ -106,10 +106,11 @@ const createMenuMidHtml = (container) => {
         "menu__mid__contents__left",
         menuMidContents
     );
-    createMenuMidItemHtml(
+    createMenuMidItemClickable(
         menuMidContentsLeft,
         "../assets/ie.png",
-        "Internet Explorer"
+        "Internet Explorer",
+        "ie"
     );
     createMenuMidItemHtml(menuMidContentsLeft, "../assets/email.png", "Email");
     createHTMLElem(

@@ -16,9 +16,9 @@ const notepadMenuItem = document.getElementsByClassName(
 );
 const ieApp = document.querySelector(".app__ie");
 const ieAppText = document.querySelector(".app__ie__item__text");
-// const ieMenuItem = document.getElementsByClassName(
-//     "menu__mid__contents__left__item__notepad"
-// );
+const ieMenuItem = document.getElementsByClassName(
+    "menu__mid__contents__left__item__ie"
+);
 const exitButton = document.getElementsByClassName("exit__button");
 const exitButtonIE = document.getElementsByClassName("exit__button__ie");
 let isMenuOpen = false;
@@ -138,6 +138,19 @@ setInterval(() => {
                 startBtn.src = "./assets/buttons-1.png";
                 counterNotepad = createNotepadApp(desktop, counterNotepad);
                 notePadOpen = true;
+                isMenuOpen = false;
+                menuApp.removeChild(
+                    document.getElementsByClassName("menu__container")[0]
+                );
+            }
+        });
+    }
+    if (ieMenuItem.length >= 1) {
+        ieMenuItem[0].addEventListener("click", () => {
+            if (!ieOpen) {
+                startBtn.src = "./assets/buttons-1.png";
+                createIEApp(desktop);
+                ieOpen = true;
                 isMenuOpen = false;
                 menuApp.removeChild(
                     document.getElementsByClassName("menu__container")[0]
