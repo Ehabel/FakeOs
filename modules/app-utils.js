@@ -4,6 +4,7 @@ import {
     createImgElemMultiClass,
     createImgElem,
     createPElem,
+    createBtnElem,
 } from "./create-elem-utils.js";
 
 const createNotepadApp = (container, counter) => {
@@ -101,9 +102,7 @@ const createNotepadApp = (container, counter) => {
     return counter;
 };
 
-const createIEApp = (container) => {
-    const ieContainer = createHTMLElem("div", "container__ie", container);
-    ieContainer.classList.add("container__default");
+const createIEAppHeader = (ieContainer) => {
     const ieHeader = createHTMLElem(
         "div",
         "container__default__header",
@@ -124,10 +123,15 @@ const createIEApp = (container) => {
         "Internet Explorer",
         ieHeaderIcons
     );
+    const ieHeaderOptions = createHTMLElem(
+        "div",
+        "container__default__options",
+        ieContainer
+    );
     const ieOptionsHeader = createHTMLElem(
         "div",
         "container__default__options__header",
-        ieContainer
+        ieHeaderOptions
     );
     createPElem(
         "container__default__options__header__text",
@@ -159,6 +163,7 @@ const createIEApp = (container) => {
         "Help",
         ieOptionsHeader
     );
+
     const ieHeaderButtons = createHTMLElem(
         "div",
         "container__default__header__buttons",
@@ -179,6 +184,101 @@ const createIEApp = (container) => {
         "exit__button__ie",
         "../assets/exit.png",
         ieHeaderButtons
+    );
+
+    const ieOptionssubheader = createHTMLElem(
+        "div",
+        "container__default__options__subheader",
+        ieHeaderOptions
+    );
+    const ieOptionssubheaderBack = createHTMLElem(
+        "div",
+        "container__default__options__subheaderback",
+        ieOptionssubheader
+    );
+    createImgElem(
+        "container__default__options__subheader__other__button",
+        "../assets/ie/back.png",
+        ieOptionssubheaderBack
+    );
+    createPElem(
+        "container__default__options__subheader__text",
+        "Back",
+        ieOptionssubheaderBack
+    );
+    createHTMLElemMultiClass(
+        "div",
+        "container__default__options__subheader__text",
+        "arrow__down",
+        ieOptionssubheaderBack
+    );
+    const ieOptionssubheaderForward = createHTMLElem(
+        "div",
+        "container__default__options__subheaderforward",
+        ieOptionssubheader
+    );
+    createImgElem(
+        "container__default__options__subheader__other__button",
+        "../assets/ie/forward.png",
+        ieOptionssubheaderForward
+    );
+    createHTMLElemMultiClass(
+        "div",
+        "container__default__options__subheader__text",
+        "arrow__down",
+        ieOptionssubheaderForward
+    );
+    createImgElem(
+        "container__default__options__subheader__button",
+        "../assets/ie/ieStop.png",
+        ieOptionssubheader
+    );
+    createImgElem(
+        "container__default__options__subheader__button",
+        "../assets/ie/ieRefresh.png",
+        ieOptionssubheader
+    );
+    createImgElem(
+        "container__default__options__subheader__button",
+        "../assets/ie/ieHome.png",
+        ieOptionssubheader
+    );
+    createImgElem(
+        "container__default__options__subheader__button",
+        "../assets/search.png",
+        ieOptionssubheader
+    );
+};
+
+const createIEApp = (container) => {
+    const ieContainer = createHTMLElem("div", "container__ie", container);
+    ieContainer.classList.add("container__default");
+    createIEAppHeader(ieContainer);
+    const ieMainBody = createHTMLElem(
+        "div",
+        "container__ie__body",
+        ieContainer
+    );
+    createImgElem(
+        "container__ie__body__logo",
+        "../assets/google.png",
+        ieMainBody
+    );
+    createHTMLElem("input", "container__ie__body__search", ieMainBody);
+    const ieMainBtnContainer = createHTMLElem(
+        "div",
+        "container__ie__body__btnContainer",
+        ieMainBody
+    );
+    createBtnElem(
+        "container__ie__body__button",
+        "Google Search",
+        ieMainBtnContainer
+    );
+    createBtnElem(
+        "container__ie__body__button",
+        "I'm Feeling Lucky",
+        ieMainBtnContainer
     );
 };
 

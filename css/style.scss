@@ -18,6 +18,22 @@ body {
     height: 100%;
 }
 
+.border__div {
+    position: absolute;
+    width: 100%;
+    border-bottom: 2px solid rgba(0, 0, 0, 1);
+}
+
+.arrow__down {
+    height: 0px;
+    width: 0px;
+    border: none;
+    margin-left: 5px;
+    border-top: 5px solid #8f8181;
+    border-left: 5px solid rgba(0, 0, 0, 0);
+    border-right: 5px solid rgba(0, 0, 0, 0);
+}
+
 .app__container {
     @include flex-opts(start, space-evenly, column);
     width: fit-content;
@@ -83,6 +99,9 @@ body {
                 )
                 center/cover no-repeat;
             &__icons {
+                -webkit-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
                 @include flex-opts(center, center);
                 padding-left: 0.2vw;
                 &__img {
@@ -107,13 +126,17 @@ body {
             }
         }
         &__options {
+            min-width: 60vw;
             &__header {
-                background-color: ghostwhite;
+                background-color: #ecebd9;
                 width: calc(100% - 6px);
                 border-left: 3px solid rgb(8, 49, 217);
                 border-right: 3px solid rgb(8, 49, 217);
                 @include flex-opts(center, flex-start);
                 &__text {
+                    -webkit-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
                     font-size: small;
                     margin: 0 0.1vw 0 0.5vw;
                 }
@@ -121,6 +144,82 @@ body {
                     background-color: #1941a5;
                     color: white;
                 }
+            }
+            &__subheader {
+                height: 3.5vh;
+                background-color: #ecebd9;
+                border-left: 3px solid rgb(8, 49, 217);
+                border-right: 3px solid rgb(8, 49, 217);
+                @include flex-opts(center, flex-start);
+                &__other__button,
+                &__button {
+                    margin: 0 0.25vw 0 0;
+                    width: 1.5vw;
+                    height: 3vh;
+                    border: 1px solid rgba(0, 0, 0, 0);
+                    border-bottom: 2px solid rgba(0, 0, 0, 0);
+                }
+                &__button:hover {
+                    border: 1px solid rgba(0, 0, 0, 0.1);
+                    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+                }
+                &__text {
+                    margin: 0 0.4vw 0 0.1vw;
+                }
+            }
+            &__subheaderback,
+            &__subheaderforward {
+                filter: grayscale(100%);
+                @include flex-opts(center, center);
+                padding-right: 0.5vw;
+                border: 1px solid rgba(0, 0, 0, 0);
+                border-bottom: 2px solid rgba(0, 0, 0, 0);
+            }
+            &__subheaderback:hover,
+            &__subheaderforward:hover {
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+            }
+        }
+    }
+    &__ie {
+        left: 15vw;
+        top: 25vh;
+        &__body {
+            @include flex-opts(center, center, column);
+            width: calc(100% - 6px);
+            height: 59vh;
+            background-color: white;
+            border-left: 3px solid rgb(8, 49, 217);
+            border-right: 3px solid rgb(8, 49, 217);
+            border-bottom: 3px solid rgb(8, 49, 217);
+            &__search {
+                width: 50%;
+                height: 4vh;
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                box-shadow: rgb(0 0 0 / 20%) 0px 2px 2px -1px;
+                border-radius: 2px;
+                display: flex;
+                -webkit-box-align: center;
+                align-items: center;
+                padding: 0px 8px 0px 16px;
+            }
+            &__button {
+                padding: 0px 16px;
+                height: 4vh;
+                margin: 3vh 0.5vw;
+                font-weight: 700;
+                font-size: 13px;
+                color: rgb(120, 120, 120);
+                border: 1px solid transparent;
+                background: rgb(242, 242, 242);
+            }
+            &__button:hover {
+                border-radius: 2px;
+                color: rgb(34, 34, 34);
+                background: rgb(248, 248, 248);
+                border: 1px solid rgb(198, 198, 198);
+                box-shadow: rgb(0 0 0 / 10%) 0px 2px 2px -1px;
             }
         }
     }

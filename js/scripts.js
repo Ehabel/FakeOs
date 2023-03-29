@@ -20,6 +20,7 @@ const ieAppText = document.querySelector(".app__ie__item__text");
 //     "menu__mid__contents__left__item__notepad"
 // );
 const exitButton = document.getElementsByClassName("exit__button");
+const exitButtonIE = document.getElementsByClassName("exit__button__ie");
 let isMenuOpen = false;
 let notePadOpen = false;
 let ieOpen = false;
@@ -123,6 +124,14 @@ setInterval(() => {
             }
         });
     }
+    if (exitButtonIE.length >= 1) {
+        exitButtonIE[0].addEventListener("click", () => {
+            if (document.querySelector(".container__ie")) {
+                desktop.removeChild(document.querySelector(".container__ie"));
+                ieOpen = false;
+            }
+        });
+    }
     if (notepadMenuItem.length >= 1) {
         notepadMenuItem[0].addEventListener("click", () => {
             if (!notePadOpen) {
@@ -136,4 +145,8 @@ setInterval(() => {
             }
         });
     }
+    let elem = document.querySelectorAll("img");
+    elem.forEach((element) => {
+        element.setAttribute("draggable", false);
+    });
 }, 500);

@@ -8,6 +8,22 @@ body {
   height: 100%;
 }
 
+.border__div {
+  position: absolute;
+  width: 100%;
+  border-bottom: 2px solid rgb(0, 0, 0);
+}
+
+.arrow__down {
+  height: 0px;
+  width: 0px;
+  border: none;
+  margin-left: 5px;
+  border-top: 5px solid #8f8181;
+  border-left: 5px solid rgba(0, 0, 0, 0);
+  border-right: 5px solid rgba(0, 0, 0, 0);
+}
+
 .app__container {
   display: flex;
   align-items: start;
@@ -76,6 +92,9 @@ body {
   background: linear-gradient(rgb(0, 88, 238) 0%, rgb(53, 147, 255) 4%, rgb(40, 142, 255) 6%, rgb(18, 125, 255) 8%, rgb(3, 111, 252) 10%, rgb(2, 98, 238) 14%, rgb(0, 87, 229) 20%, rgb(0, 84, 227) 24%, rgb(0, 85, 235) 56%, rgb(0, 91, 245) 66%, rgb(2, 106, 254) 76%, rgb(0, 98, 239) 86%, rgb(0, 82, 214) 92%, rgb(0, 64, 171) 94%, rgb(0, 48, 146) 100%) center/cover no-repeat;
 }
 .container__default__header__icons {
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -106,8 +125,11 @@ body {
   width: 1.2vw;
   height: 2.4vh;
 }
+.container__default__options {
+  min-width: 60vw;
+}
 .container__default__options__header {
-  background-color: ghostwhite;
+  background-color: #ecebd9;
   width: calc(100% - 6px);
   border-left: 3px solid rgb(8, 49, 217);
   border-right: 3px solid rgb(8, 49, 217);
@@ -118,12 +140,100 @@ body {
   flex-wrap: nowrap;
 }
 .container__default__options__header__text {
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   font-size: small;
   margin: 0 0.1vw 0 0.5vw;
 }
 .container__default__options__header__text:hover {
   background-color: #1941a5;
   color: white;
+}
+.container__default__options__subheader {
+  height: 3.5vh;
+  background-color: #ecebd9;
+  border-left: 3px solid rgb(8, 49, 217);
+  border-right: 3px solid rgb(8, 49, 217);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.container__default__options__subheader__other__button, .container__default__options__subheader__button {
+  margin: 0 0.25vw 0 0;
+  width: 1.5vw;
+  height: 3vh;
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-bottom: 2px solid rgba(0, 0, 0, 0);
+}
+.container__default__options__subheader__button:hover {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+.container__default__options__subheader__text {
+  margin: 0 0.4vw 0 0.1vw;
+}
+.container__default__options__subheaderback, .container__default__options__subheaderforward {
+  filter: grayscale(100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding-right: 0.5vw;
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-bottom: 2px solid rgba(0, 0, 0, 0);
+}
+.container__default__options__subheaderback:hover, .container__default__options__subheaderforward:hover {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+.container__ie {
+  left: 15vw;
+  top: 25vh;
+}
+.container__ie__body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: calc(100% - 6px);
+  height: 59vh;
+  background-color: white;
+  border-left: 3px solid rgb(8, 49, 217);
+  border-right: 3px solid rgb(8, 49, 217);
+  border-bottom: 3px solid rgb(8, 49, 217);
+}
+.container__ie__body__search {
+  width: 50%;
+  height: 4vh;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 2px -1px;
+  border-radius: 2px;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  padding: 0px 8px 0px 16px;
+}
+.container__ie__body__button {
+  padding: 0px 16px;
+  height: 4vh;
+  margin: 3vh 0.5vw;
+  font-weight: 700;
+  font-size: 13px;
+  color: rgb(120, 120, 120);
+  border: 1px solid transparent;
+  background: rgb(242, 242, 242);
+}
+.container__ie__body__button:hover {
+  border-radius: 2px;
+  color: rgb(34, 34, 34);
+  background: rgb(248, 248, 248);
+  border: 1px solid rgb(198, 198, 198);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 2px -1px;
 }
 .container__notepad__textWrapper {
   width: 100%;

@@ -38,10 +38,19 @@ const createPElem = (classAdd, text, parentNode) => {
     return tagName;
 };
 
+const createBtnElem = (classAdd, text, parentNode) => {
+    const tagName = document.createElement("button");
+    tagName.classList.add(classAdd);
+    tagName.appendChild(document.createTextNode(text));
+    parentNode.appendChild(tagName);
+    return tagName;
+};
+
 export {
     createHTMLElem,
     createHTMLElemMultiClass,
     createImgElem,
     createImgElemMultiClass,
     createPElem,
+    createBtnElem,
 };
