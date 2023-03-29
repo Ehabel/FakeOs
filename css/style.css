@@ -8,12 +8,6 @@ body {
   height: 100%;
 }
 
-.border__div {
-  position: absolute;
-  width: 100%;
-  border-bottom: 2px solid rgb(0, 0, 0);
-}
-
 .arrow__down {
   height: 0px;
   width: 0px;
@@ -213,10 +207,10 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 2px -1px;
   border-radius: 2px;
-  display: flex;
-  -webkit-box-align: center;
-  align-items: center;
   padding: 0px 8px 0px 16px;
+}
+.container__ie__body__search:focus {
+  outline: none;
 }
 .container__ie__body__button {
   padding: 0px 16px;
