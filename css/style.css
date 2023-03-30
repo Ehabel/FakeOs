@@ -221,6 +221,9 @@ body {
   border: 1px solid rgba(0, 0, 0, 0);
   border-bottom: 2px solid rgba(0, 0, 0, 0);
 }
+.container__default__options__subheaderback--on, .container__default__options__subheaderforward--on {
+  filter: grayscale(0%);
+}
 .container__default__options__subheaderother {
   display: flex;
   align-items: center;

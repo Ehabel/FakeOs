@@ -39,6 +39,13 @@ const steMenuItem = document.getElementsByClassName(
     "menu__mid__contents__left__item__ste"
 );
 
+const goBackIE = document.getElementsByClassName(
+    "container__default__options__subheaderback"
+);
+const goBackIEActive = document.getElementsByClassName(
+    "container__default__options__subheaderback--on"
+);
+
 const exitButton = document.getElementsByClassName("exit__button__npd");
 const exitButtonIE = document.getElementsByClassName("exit__button__ie");
 const exitButtonSTE = document.getElementsByClassName("exit__button__ste");
@@ -217,9 +224,18 @@ const swapZIndex = (moveToFront, moveToBackOne, moveToBackTwo) => {
 };
 
 setInterval(() => {
+    if (goBackIEActive.length >= 1) {
+        goBackIEActive[0].addEventListener("click", () => {
+            desktop.removeChild(document.querySelector(".container__ie"));
+            createIEApp(desktop);
+            goBackIE[0].classList.remove(
+                "container__default__options__subheaderback--on"
+            );
+        });
+    }
     if (ieSearchButton.length >= 1) {
         ieSearchButton[0].addEventListener("click", () => {
-            if (ieSearch[0].value !== "") {
+            if (ieSearch[0] !== undefined && ieSearch[0].value !== "") {
                 const searchHeaderText = document.querySelector(
                     ".container__default__options__subheader__addressbar__bar"
                 );
@@ -231,6 +247,11 @@ setInterval(() => {
                 );
                 if (ieSearchPageSearch[0] && textVal !== undefined) {
                     ieSearchPageSearch[0].value = textVal;
+                }
+                if (goBackIE[0]) {
+                    goBackIE[0].classList.add(
+                        "container__default__options__subheaderback--on"
+                    );
                 }
             }
         });
@@ -245,6 +266,11 @@ setInterval(() => {
                     searchHeaderText.value = `https://www.google.com/search?q=${ieSearchPageSearch[0].value}`;
                     document.querySelector(".bold__span").textContent =
                         ieSearchPageSearch[0].value;
+                    if (goBackIE[0]) {
+                        goBackIE[0].classList.add(
+                            "container__default__options__subheaderback--on"
+                        );
+                    }
                 }
             }
         });
