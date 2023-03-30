@@ -40,7 +40,7 @@ let ieOpen = false;
 let steOpen = false;
 let counterNotepad = 0;
 let zIndexApp = 2;
-let openedAppCounter = 1;
+
 const updateClock = () => {
     let now = new Date();
     let hours = now.getHours();
@@ -103,7 +103,6 @@ notepadApp.addEventListener("click", (event) => {
 });
 
 notepadApp.addEventListener("dblclick", (event) => {
-    openedAppCounter = desktop.childElementCount;
     event.stopPropagation();
     if (notepadAppText.classList.contains("container__item__text--clicked")) {
         notepadAppText.classList.remove("container__item__text--clicked");
@@ -132,7 +131,6 @@ ieApp.addEventListener("click", (event) => {
 });
 
 ieApp.addEventListener("dblclick", (event) => {
-    openedAppCounter = desktop.childElementCount;
     event.stopPropagation();
     if (ieApp.classList.contains("container__item__text--clicked")) {
         ieApp.classList.remove("container__item__text--clicked");
@@ -161,7 +159,6 @@ steApp.addEventListener("click", (event) => {
 });
 
 steApp.addEventListener("dblclick", (event) => {
-    openedAppCounter = desktop.childElementCount;
     event.stopPropagation();
     if (steApp.classList.contains("container__item__text--clicked")) {
         steApp.classList.remove("container__item__text--clicked");
@@ -206,23 +203,6 @@ const swapZIndex = (moveToFront, moveToBackOne, moveToBackTwo) => {
     }
 };
 
-// const mutationExitNPD = (mutationList) => {
-//     for (const mutation of mutationList) {
-//         if (mutation.type === "childList") {
-//         }
-//     }
-// };
-// const observer = new MutationObserver(mutationExitNPD);
-
-// if (desktop.childElementCount >= 1) {
-//     observer.observe(desktop, {
-//         childList: true,
-//         subtree: true,
-//     });
-// } else if (desktop.childElementCount < 1) {
-//     observer.disconnect();
-// }
-// observer.disconnect();
 setInterval(() => {
     if (exitButton.length >= 1) {
         exitButton[0].addEventListener("click", () => {
