@@ -18,6 +18,10 @@ body {
     height: 100%;
 }
 
+.bold__span {
+    font-weight: bolder;
+}
+
 .arrow__down {
     height: 0px;
     width: 0px;
@@ -262,6 +266,51 @@ body {
                 box-shadow: rgb(0 0 0 / 10%) 0px 2px 2px -1px;
             }
         }
+        &__searchbody {
+            width: calc(100% - 6px);
+            height: 59vh;
+            background-color: white;
+            border-left: 3px solid rgb(8, 49, 217);
+            border-right: 3px solid rgb(8, 49, 217);
+            border-bottom: 3px solid rgb(8, 49, 217);
+            &__topcont {
+                height: 10vh;
+                border-bottom: 1px solid rgb(235, 235, 235);
+            }
+            &__top {
+                margin: 3vh 0 0 2vw;
+                @include flex-opts(center, flex-start);
+                &__logo {
+                    width: 6vw;
+                    margin-right: 1.5vw;
+                }
+                &__bar {
+                    -webkit-box-align: center;
+                    border-radius: 22px;
+                    width: 586px;
+                    height: 46px;
+                    border: 1px solid rgb(223, 225, 229);
+                    padding: 5px 0px 0px 20px;
+                }
+                &__search {
+                    margin-top: 8px;
+                    outline: 0px;
+                    border: 0px;
+                    width: 536px;
+                    font-size: 18px;
+                }
+            }
+
+            &__bottom {
+                padding: 55px 0 0 10vw;
+                &__text {
+                    padding: 0 0 10px 0;
+                    &__list {
+                        padding: 0;
+                    }
+                }
+            }
+        }
     }
     &__notepad {
         position: absolute;
@@ -305,7 +354,6 @@ body {
         }
     }
 }
-
 .menu {
     cursor: default;
     -webkit-user-select: none;

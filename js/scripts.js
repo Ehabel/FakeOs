@@ -8,6 +8,7 @@ import {
     createIEApp,
     createNotepadApp,
     createSolitaireApp,
+    createIESearchPage,
 } from "../modules/app-utils.js";
 
 const startBtn = document.querySelector(".taskbar__start__button");
@@ -26,6 +27,11 @@ const ieAppText = document.querySelector(".app__ie__item__text");
 const ieMenuItem = document.getElementsByClassName(
     "menu__mid__contents__left__item__ie"
 );
+const ieSearchButton = document.getElementsByClassName("search__google");
+const ieSearchPageSearch = document.getElementsByClassName(
+    "container__ie__searchbody__top__search"
+);
+const ieSearch = document.getElementsByClassName("container__ie__body__search");
 const steApp = document.querySelector(".app__ste");
 const steAppText = document.querySelector(".app__ste__item__text");
 const steMenuItem = document.getElementsByClassName(
@@ -205,6 +211,23 @@ const swapZIndex = (moveToFront, moveToBackOne, moveToBackTwo) => {
 };
 
 setInterval(() => {
+    if (ieSearchButton.length >= 1) {
+        ieSearchButton[0].addEventListener("click", () => {
+            createIESearchPage(
+                document.querySelector(".container__ie"),
+                ieSearch[0].value
+            );
+        });
+    }
+    if (ieSearchPageSearch.length >= 1) {
+        ieSearchPageSearch[0].addEventListener("keydown", (e) => {
+            if (e.code === "Enter") {
+                console.log(ieSearchPageSearch[0].value);
+                document.querySelector(".bold__span").textContent =
+                    ieSearchPageSearch[0].value;
+            }
+        });
+    }
     if (exitButton.length >= 1) {
         exitButton[0].addEventListener("click", () => {
             if (document.querySelector(".container__notepad")) {

@@ -46,6 +46,14 @@ const createBtnElem = (classAdd, text, parentNode) => {
     return tagName;
 };
 
+const createLiElem = (classAdd, text, parentNode) => {
+    const tagName = document.createElement("li");
+    tagName.classList.add(classAdd);
+    tagName.appendChild(document.createTextNode(text));
+    parentNode.appendChild(tagName);
+    return tagName;
+};
+
 export {
     createHTMLElem,
     createHTMLElemMultiClass,
@@ -53,4 +61,5 @@ export {
     createImgElemMultiClass,
     createPElem,
     createBtnElem,
+    createLiElem,
 };

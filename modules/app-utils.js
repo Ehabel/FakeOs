@@ -5,6 +5,7 @@ import {
     createImgElem,
     createPElem,
     createBtnElem,
+    createLiElem,
 } from "./create-elem-utils.js";
 
 const createHeaderForApp = (headerDiv) => {
@@ -22,6 +23,19 @@ const createHeaderForApp = (headerDiv) => {
         headerDiv
     );
     createPElem("container__default__options__header__text", "Help", headerDiv);
+};
+
+const createSearchPElem = (classAdd, text, textTwo, parentNode, spantext) => {
+    const tagName = document.createElement("p");
+    const tagTwo = document.createElement("span");
+    tagTwo.appendChild(document.createTextNode(spantext));
+    tagTwo.classList.add("bold__span");
+    tagName.classList.add(classAdd);
+    tagName.appendChild(document.createTextNode(text));
+    tagName.appendChild(tagTwo);
+    tagName.appendChild(document.createTextNode(textTwo));
+    parentNode.appendChild(tagName);
+    return tagName;
 };
 
 const createTopBarForApp = (container, imgLink, appName, exitClassName) => {
@@ -263,15 +277,97 @@ const createIEApp = (container) => {
         "container__ie__body__btnContainer",
         ieMainBody
     );
-    createBtnElem(
+    const googleSearchButton = createBtnElem(
         "container__ie__body__button",
         "Google Search",
         ieMainBtnContainer
     );
+    googleSearchButton.classList.add("search__google");
     createBtnElem(
         "container__ie__body__button",
         "I'm Feeling Lucky",
         ieMainBtnContainer
+    );
+};
+
+const createIESearchPage = (container, searchText) => {
+    container.removeChild(document.querySelector(".container__ie__body"));
+    const ieMainBody = createHTMLElem(
+        "div",
+        "container__ie__searchbody",
+        container
+    );
+    const ieMainBodyTopContainer = createHTMLElem(
+        "div",
+        "container__ie__searchbody__topcont",
+        ieMainBody
+    );
+    const ieMainBodyTop = createHTMLElem(
+        "div",
+        "container__ie__searchbody__top",
+        ieMainBodyTopContainer
+    );
+    createImgElem(
+        "container__ie__searchbody__top__logo",
+        "../assets/google.png",
+        ieMainBodyTop
+    );
+    const ieSearchBar = createHTMLElem(
+        "div",
+        "container__ie__searchbody__top__bar",
+        ieMainBodyTop
+    );
+    createHTMLElem(
+        "input",
+        "container__ie__searchbody__top__search",
+        ieSearchBar
+    );
+    const ieMainBodyBottom = createHTMLElem(
+        "div",
+        "container__ie__searchbody__bottom",
+        ieMainBody
+    );
+    // createPElem(
+    //     "container__ie__searchbody__bottom__text",
+    //     "Your Search - ",
+    //     ieMainBodyBottom
+    // );
+    // createPElem(
+    //     "container__ie__searchbody__bottom__text",
+    //     " - did not match any documents.",
+    //     ieMainBodyBottom
+    // );
+    createSearchPElem(
+        "container__ie__searchbody__bottom__text",
+        "Your Search - ",
+        " - did not match any documents.",
+        ieMainBodyBottom,
+        searchText
+    );
+    createPElem(
+        "container__ie__searchbody__bottom__text",
+        "Suggestions",
+        ieMainBodyBottom
+    );
+    const suggestionsList = createHTMLElem(
+        "ul",
+        "container__ie__searchbody__bottom__text",
+        ieMainBodyBottom
+    );
+    createLiElem(
+        "container__ie__searchbody__bottom__text__list",
+        "Make sure that all words are spelled correctly.",
+        suggestionsList
+    );
+    createLiElem(
+        "container__ie__searchbody__bottom__text__list",
+        "Try different keywords.",
+        suggestionsList
+    );
+    createLiElem(
+        "container__ie__searchbody__bottom__text__list",
+        "Try more general keywords.",
+        suggestionsList
     );
 };
 
@@ -306,4 +402,9 @@ const createSolitaireApp = (container) => {
     );
 };
 
-export { createNotepadApp, createIEApp, createSolitaireApp };
+export {
+    createNotepadApp,
+    createIEApp,
+    createSolitaireApp,
+    createIESearchPage,
+};
