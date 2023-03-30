@@ -276,6 +276,9 @@ body {
   border: 1px solid rgb(198, 198, 198);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 2px -1px;
 }
+.container__notepad {
+  position: absolute;
+}
 .container__notepad__textWrapper {
   width: 100%;
 }
@@ -288,6 +291,9 @@ body {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  white-space: pre;
+  overflow-wrap: normal;
+  overflow-x: scroll;
 }
 .container__notepad__textarea:focus {
   overflow: auto;
@@ -296,6 +302,17 @@ body {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
+}
+.container__ste {
+  position: absolute;
+  top: 15vh;
+  left: 45vw;
+}
+.container__ste__body__img {
+  width: 45vw;
+  border-left: 3px solid rgb(8, 49, 217);
+  border-right: 3px solid rgb(8, 49, 217);
+  border-bottom: 3px solid rgb(8, 49, 217);
 }
 
 .menu {

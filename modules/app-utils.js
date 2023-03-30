@@ -7,6 +7,67 @@ import {
     createBtnElem,
 } from "./create-elem-utils.js";
 
+const createHeaderForApp = (headerDiv) => {
+    createPElem("container__default__options__header__text", "File", headerDiv);
+    createPElem("container__default__options__header__text", "Edit", headerDiv);
+    createPElem("container__default__options__header__text", "View", headerDiv);
+    createPElem(
+        "container__default__options__header__text",
+        "Favourites",
+        headerDiv
+    );
+    createPElem(
+        "container__default__options__header__text",
+        "Tools",
+        headerDiv
+    );
+    createPElem("container__default__options__header__text", "Help", headerDiv);
+};
+
+const createTopBarForApp = (container, imgLink, appName, exitClassName) => {
+    const appHeader = createHTMLElem(
+        "div",
+        "container__default__header",
+        container
+    );
+    const appHeaderIcons = createHTMLElem(
+        "div",
+        "container__default__header__icons",
+        appHeader
+    );
+    createImgElem(
+        "container__default__header__icons__img",
+        `../assets/${imgLink}.png`,
+        appHeaderIcons
+    );
+    createPElem(
+        "container__default__header__icons__text",
+        `${appName}`,
+        appHeaderIcons
+    );
+    const appHeaderButtons = createHTMLElem(
+        "div",
+        "container__default__header__buttons",
+        appHeader
+    );
+    createImgElem(
+        "container__default__header__buttons__button",
+        "../assets/minimize.png",
+        appHeaderButtons
+    );
+    createImgElem(
+        "container__default__header__buttons__button",
+        "../assets/maximize.png",
+        appHeaderButtons
+    );
+    createImgElemMultiClass(
+        "container__default__header__buttons__button",
+        `exit__button__${exitClassName}`,
+        "../assets/exit.png",
+        appHeaderButtons
+    );
+};
+
 const createNotepadApp = (container, counter) => {
     const notepadContainer = createHTMLElemMultiClass(
         "div",
@@ -15,77 +76,13 @@ const createNotepadApp = (container, counter) => {
         container
     );
     notepadContainer.classList.add("container__default");
-    const notepadHeader = createHTMLElem(
-        "div",
-        "container__default__header",
-        notepadContainer
-    );
-    const notepadHeaderIcons = createHTMLElem(
-        "div",
-        "container__default__header__icons",
-        notepadHeader
-    );
-    createImgElem(
-        "container__default__header__icons__img",
-        "../assets/npad.png",
-        notepadHeaderIcons
-    );
-    createPElem(
-        "container__default__header__icons__text",
-        "Untitled-Notepad",
-        notepadHeaderIcons
-    );
+    createTopBarForApp(notepadContainer, "npad", "Untitled-Notepad", "npd");
     const notepadOptionsHeader = createHTMLElem(
         "div",
         "container__default__options__header",
         notepadContainer
     );
-    createPElem(
-        "container__default__options__header__text",
-        "File",
-        notepadOptionsHeader
-    );
-    createPElem(
-        "container__default__options__header__text",
-        "Edit",
-        notepadOptionsHeader
-    );
-    createPElem(
-        "container__default__options__header__text",
-        "Format",
-        notepadOptionsHeader
-    );
-    createPElem(
-        "container__default__options__header__text",
-        "View",
-        notepadOptionsHeader
-    );
-    createPElem(
-        "container__default__options__header__text",
-        "Help",
-        notepadOptionsHeader
-    );
-    const notepadHeaderButtons = createHTMLElem(
-        "div",
-        "container__default__header__buttons",
-        notepadHeader
-    );
-    createImgElem(
-        "container__default__header__buttons__button",
-        "../assets/minimize.png",
-        notepadHeaderButtons
-    );
-    createImgElem(
-        "container__default__header__buttons__button",
-        "../assets/maximize.png",
-        notepadHeaderButtons
-    );
-    createImgElemMultiClass(
-        "container__default__header__buttons__button",
-        "exit__button",
-        "../assets/exit.png",
-        notepadHeaderButtons
-    );
+    createHeaderForApp(notepadOptionsHeader);
     const textWrapper = createHTMLElem(
         "div",
         "container__notepad__textWrapper",
@@ -103,26 +100,7 @@ const createNotepadApp = (container, counter) => {
 };
 
 const createIEAppHeader = (ieContainer) => {
-    const ieHeader = createHTMLElem(
-        "div",
-        "container__default__header",
-        ieContainer
-    );
-    const ieHeaderIcons = createHTMLElem(
-        "div",
-        "container__default__header__icons",
-        ieHeader
-    );
-    createImgElem(
-        "container__default__header__icons__img",
-        "../assets/ie.png",
-        ieHeaderIcons
-    );
-    createPElem(
-        "container__default__header__icons__text",
-        "Internet Explorer",
-        ieHeaderIcons
-    );
+    createTopBarForApp(ieContainer, "ie", "Internet Explorer", "ie");
     const ieHeaderOptions = createHTMLElem(
         "div",
         "container__default__options",
@@ -133,58 +111,7 @@ const createIEAppHeader = (ieContainer) => {
         "container__default__options__header",
         ieHeaderOptions
     );
-    createPElem(
-        "container__default__options__header__text",
-        "File",
-        ieOptionsHeader
-    );
-    createPElem(
-        "container__default__options__header__text",
-        "Edit",
-        ieOptionsHeader
-    );
-    createPElem(
-        "container__default__options__header__text",
-        "View",
-        ieOptionsHeader
-    );
-    createPElem(
-        "container__default__options__header__text",
-        "Favourites",
-        ieOptionsHeader
-    );
-    createPElem(
-        "container__default__options__header__text",
-        "Tools",
-        ieOptionsHeader
-    );
-    createPElem(
-        "container__default__options__header__text",
-        "Help",
-        ieOptionsHeader
-    );
-
-    const ieHeaderButtons = createHTMLElem(
-        "div",
-        "container__default__header__buttons",
-        ieHeader
-    );
-    createImgElem(
-        "container__default__header__buttons__button",
-        "../assets/minimize.png",
-        ieHeaderButtons
-    );
-    createImgElem(
-        "container__default__header__buttons__button",
-        "../assets/maximize.png",
-        ieHeaderButtons
-    );
-    createImgElemMultiClass(
-        "container__default__header__buttons__button",
-        "exit__button__ie",
-        "../assets/exit.png",
-        ieHeaderButtons
-    );
+    createHeaderForApp(ieOptionsHeader);
     createHTMLElem(
         "div",
         "container__default__options__border",
@@ -348,4 +275,35 @@ const createIEApp = (container) => {
     );
 };
 
-export { createNotepadApp, createIEApp };
+const createSolitaireApp = (container) => {
+    const solitaireContainer = createHTMLElem(
+        "div",
+        "container__ste",
+        container
+    );
+    solitaireContainer.classList.add("container__default");
+    createTopBarForApp(solitaireContainer, "solitaire", "Solitaire", "ste");
+
+    const solitaireOptionsHeader = createHTMLElem(
+        "div",
+        "container__default__options__header",
+        solitaireContainer
+    );
+    createPElem(
+        "container__default__options__header__text",
+        "Game",
+        solitaireOptionsHeader
+    );
+    createPElem(
+        "container__default__options__header__text",
+        "Help",
+        solitaireOptionsHeader
+    );
+    createImgElem(
+        "container__ste__body__img",
+        "../assets/solitaireImg.png",
+        solitaireContainer
+    );
+};
+
+export { createNotepadApp, createIEApp, createSolitaireApp };

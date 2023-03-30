@@ -93,6 +93,26 @@ const createMenuMidItemHtmlAll = (container, src, text) => {
     );
 };
 
+const createMenuLeft = (container, leftMenuItem, LeftMenuName) => {
+    for (let i = 0; i < leftMenuItem.length; i++) {
+        createMenuMidItemHtml(
+            container,
+            `../assets/${leftMenuItem[i]}.png`,
+            `${LeftMenuName[i]}`
+        );
+    }
+};
+
+const createMenuRight = (container, rightMenuItem, rightMenuName) => {
+    for (let i = 0; i < rightMenuItem.length; i++) {
+        createMenuMidRightItemHtml(
+            container,
+            `../assets/${rightMenuItem[i]}.png`,
+            `${rightMenuName[i]}`
+        );
+    }
+};
+
 const createMenuMidHtml = (container) => {
     const menuMid = createHTMLElem("div", "menu__mid", container);
     const menuMidContents = createHTMLElem(
@@ -112,27 +132,16 @@ const createMenuMidHtml = (container) => {
         "Internet Explorer",
         "ie"
     );
-    createMenuMidItemHtml(menuMidContentsLeft, "../assets/email.png", "Email");
+    createMenuMidItemClickable(
+        menuMidContentsLeft,
+        "../assets/solitaire.png",
+        "Solitaire",
+        "ste"
+    );
     createHTMLElem(
         "div",
         "menu__mid__contents__left__separator",
         menuMidContentsLeft
-    );
-    createMenuMidItemHtml(
-        menuMidContentsLeft,
-        "../assets/cmd.png",
-        "Command Prompt"
-    );
-    createMenuMidItemHtml(menuMidContentsLeft, "../assets/MSN.png", "MSN");
-    createMenuMidItemHtml(
-        menuMidContentsLeft,
-        "../assets/wmp.png",
-        "Windows Media Player"
-    );
-    createMenuMidItemHtml(
-        menuMidContentsLeft,
-        "../assets/wmsg.png",
-        "Windows Messenger"
     );
     createMenuMidItemClickable(
         menuMidContentsLeft,
@@ -140,10 +149,16 @@ const createMenuMidHtml = (container) => {
         "Notepad",
         "notepad"
     );
-    createMenuMidItemHtml(
+    createMenuLeft(
         menuMidContentsLeft,
-        "../assets/cal.png",
-        "Calculator"
+        ["cmd", "MSN", "wmp", "wmsg", "cal"],
+        [
+            "Command Prompt",
+            "MSN",
+            "Windows Media Player",
+            "Windows Messenger",
+            "Calculator",
+        ]
     );
     createHTMLElemMultiClass(
         "div",
@@ -161,75 +176,41 @@ const createMenuMidHtml = (container) => {
         "menu__mid__contents__right",
         menuMidContents
     );
-    createMenuMidRightItemHtml(
+    createMenuRight(
         menuMidContentsRight,
-        "../assets/mydocs.png",
-        "My Documents"
-    );
-    createMenuMidRightItemHtml(
-        menuMidContentsRight,
-        "../assets/recentdocs.png",
-        "My Recent Documents"
-    );
-    createMenuMidRightItemHtml(
-        menuMidContentsRight,
-        "../assets/mypics.png",
-        "My Pictures"
-    );
-    createMenuMidRightItemHtml(
-        menuMidContentsRight,
-        "../assets/mymusic.png",
-        "My Music"
-    );
-    createMenuMidRightItemHtml(
-        menuMidContentsRight,
-        "../assets/mypc.png",
-        "My Computer"
+        ["mydocs", "recentdocs", "mypics", "mymusic", "mypc"],
+        [
+            "My Documents",
+            "My Recent Documents",
+            "My Pictures",
+            "My Music",
+            "My Computer",
+        ]
     );
     createHTMLElem(
         "div",
         "menu__mid__contents__right__separator",
         menuMidContentsRight
     );
-    createMenuMidRightItemHtml(
+    createMenuRight(
         menuMidContentsRight,
-        "../assets/ctrlpnl.png",
-        "Control Panel"
-    );
-    createMenuMidRightItemHtml(
-        menuMidContentsRight,
-        "../assets/default.png",
-        "Set Program Access and Defaults"
-    );
-    createMenuMidRightItemHtml(
-        menuMidContentsRight,
-        "../assets/netconn.png",
-        "Connect to"
-    );
-    createMenuMidRightItemHtml(
-        menuMidContentsRight,
-        "../assets/printfax.png",
-        "Printers and Faxes"
+        ["ctrlpnl", "default", "netconn", "printfax"],
+        [
+            "Control Panel",
+            "Set Program Access and Defaults",
+            "Connect to",
+            "Printers and Faxes",
+        ]
     );
     createHTMLElem(
         "div",
         "menu__mid__contents__right__separator",
         menuMidContentsRight
     );
-    createMenuMidRightItemHtml(
+    createMenuRight(
         menuMidContentsRight,
-        "../assets/help.png",
-        "Help and Support"
-    );
-    createMenuMidRightItemHtml(
-        menuMidContentsRight,
-        "../assets/search.png",
-        "Search"
-    );
-    createMenuMidRightItemHtml(
-        menuMidContentsRight,
-        "../assets/run.png",
-        "Run..."
+        ["help", "search", "run"],
+        ["Help and Support", "Search", "Run..."]
     );
 };
 
