@@ -40,6 +40,7 @@ let ieOpen = false;
 let steOpen = false;
 let counterNotepad = 0;
 let zIndexApp = 2;
+let openedAppCounter = 0;
 
 const updateClock = () => {
     let now = new Date();
@@ -132,8 +133,8 @@ ieApp.addEventListener("click", (event) => {
 
 ieApp.addEventListener("dblclick", (event) => {
     event.stopPropagation();
-    if (ieApp.classList.contains("container__item__text--clicked")) {
-        ieApp.classList.remove("container__item__text--clicked");
+    if (ieAppText.classList.contains("container__item__text--clicked")) {
+        ieAppText.classList.remove("container__item__text--clicked");
     }
     if (!ieOpen) {
         createIEApp(desktop);
@@ -146,8 +147,8 @@ steApp.addEventListener("click", (event) => {
     if (notepadAppText.classList.contains("container__item__text--clicked")) {
         notepadAppText.classList.remove("container__item__text--clicked");
     }
-    if (ieApp.classList.contains("container__item__text--clicked")) {
-        ieApp.classList.remove("container__item__text--clicked");
+    if (ieAppText.classList.contains("container__item__text--clicked")) {
+        ieAppText.classList.remove("container__item__text--clicked");
     }
     if (menuChild) {
         menuApp.removeChild(menuChild);
@@ -160,8 +161,8 @@ steApp.addEventListener("click", (event) => {
 
 steApp.addEventListener("dblclick", (event) => {
     event.stopPropagation();
-    if (steApp.classList.contains("container__item__text--clicked")) {
-        steApp.classList.remove("container__item__text--clicked");
+    if (steAppText.classList.contains("container__item__text--clicked")) {
+        steAppText.classList.remove("container__item__text--clicked");
     }
     if (!steOpen) {
         createSolitaireApp(desktop);
@@ -210,7 +211,6 @@ setInterval(() => {
                 desktop.removeChild(
                     document.querySelector(".container__notepad")
                 );
-                openedAppCounter--;
                 notePadOpen = false;
             }
         });
@@ -219,7 +219,6 @@ setInterval(() => {
         exitButtonIE[0].addEventListener("click", () => {
             if (document.querySelector(".container__ie")) {
                 desktop.removeChild(document.querySelector(".container__ie"));
-                openedAppCounter--;
                 ieOpen = false;
             }
         });
@@ -228,7 +227,6 @@ setInterval(() => {
         exitButtonSTE[0].addEventListener("click", () => {
             if (document.querySelector(".container__ste")) {
                 desktop.removeChild(document.querySelector(".container__ste"));
-                openedAppCounter--;
                 steOpen = false;
             }
         });
