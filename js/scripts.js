@@ -14,39 +14,45 @@ import {
 const startBtn = document.querySelector(".taskbar__start__button");
 const menuApp = document.querySelector(".menu");
 const desktop = document.querySelector(".container");
-const notepadZIndex = document.getElementsByClassName("container__notepad");
-const ieZIndex = document.getElementsByClassName("container__ie");
-const steZIndex = document.getElementsByClassName("container__ste");
+
 const notepadApp = document.querySelector(".app__notepad");
 const notepadAppText = document.querySelector(".app__notepad__item__text");
 const notepadMenuItem = document.getElementsByClassName(
     "menu__mid__contents__left__item__notepad"
 );
+
 const ieApp = document.querySelector(".app__ie");
 const ieAppText = document.querySelector(".app__ie__item__text");
 const ieMenuItem = document.getElementsByClassName(
     "menu__mid__contents__left__item__ie"
 );
+
 const ieSearchButton = document.getElementsByClassName("search__google");
 const ieSearchPageSearch = document.getElementsByClassName(
     "container__ie__searchbody__top__search"
 );
+
 const ieSearch = document.getElementsByClassName("container__ie__body__search");
 const steApp = document.querySelector(".app__ste");
 const steAppText = document.querySelector(".app__ste__item__text");
 const steMenuItem = document.getElementsByClassName(
     "menu__mid__contents__left__item__ste"
 );
+
 const exitButton = document.getElementsByClassName("exit__button__npd");
 const exitButtonIE = document.getElementsByClassName("exit__button__ie");
 const exitButtonSTE = document.getElementsByClassName("exit__button__ste");
+
+const notepadZIndex = document.getElementsByClassName("container__notepad");
+const ieZIndex = document.getElementsByClassName("container__ie");
+const steZIndex = document.getElementsByClassName("container__ste");
+
 let isMenuOpen = false;
 let notePadOpen = false;
 let ieOpen = false;
 let steOpen = false;
 let counterNotepad = 0;
 let zIndexApp = 2;
-let openedAppCounter = 0;
 
 const updateClock = () => {
     let now = new Date();
@@ -213,18 +219,33 @@ const swapZIndex = (moveToFront, moveToBackOne, moveToBackTwo) => {
 setInterval(() => {
     if (ieSearchButton.length >= 1) {
         ieSearchButton[0].addEventListener("click", () => {
-            createIESearchPage(
-                document.querySelector(".container__ie"),
-                ieSearch[0].value
-            );
+            if (ieSearch[0].value !== "") {
+                const searchHeaderText = document.querySelector(
+                    ".container__default__options__subheader__addressbar__bar"
+                );
+                const textVal = ieSearch[0].value;
+                searchHeaderText.value = `https://www.google.com/search?q=${ieSearch[0].value}`;
+                createIESearchPage(
+                    document.querySelector(".container__ie"),
+                    textVal
+                );
+                if (ieSearchPageSearch[0] && textVal !== undefined) {
+                    ieSearchPageSearch[0].value = textVal;
+                }
+            }
         });
     }
     if (ieSearchPageSearch.length >= 1) {
         ieSearchPageSearch[0].addEventListener("keydown", (e) => {
             if (e.code === "Enter") {
-                console.log(ieSearchPageSearch[0].value);
-                document.querySelector(".bold__span").textContent =
-                    ieSearchPageSearch[0].value;
+                if (ieSearchPageSearch[0].value !== "") {
+                    const searchHeaderText = document.querySelector(
+                        ".container__default__options__subheader__addressbar__bar"
+                    );
+                    searchHeaderText.value = `https://www.google.com/search?q=${ieSearchPageSearch[0].value}`;
+                    document.querySelector(".bold__span").textContent =
+                        ieSearchPageSearch[0].value;
+                }
             }
         });
     }
