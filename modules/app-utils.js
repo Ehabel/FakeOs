@@ -327,16 +327,6 @@ const createIESearchPage = (container, searchText) => {
         "container__ie__searchbody__bottom",
         ieMainBody
     );
-    // createPElem(
-    //     "container__ie__searchbody__bottom__text",
-    //     "Your Search - ",
-    //     ieMainBodyBottom
-    // );
-    // createPElem(
-    //     "container__ie__searchbody__bottom__text",
-    //     " - did not match any documents.",
-    //     ieMainBodyBottom
-    // );
     createSearchPElem(
         "container__ie__searchbody__bottom__text",
         "Your Search - ",

@@ -81,7 +81,6 @@ const createMenuHTML = () => {
 };
 
 startBtn.addEventListener("click", () => {
-    openedAppCounter = desktop.childElementCount;
     if (notepadAppText.classList.contains("container__item__text--clicked")) {
         notepadAppText.classList.remove("container__item__text--clicked");
     }
@@ -347,4 +346,4 @@ setInterval(() => {
     elem.forEach((element) => {
         element.setAttribute("draggable", false);
     });
-}, 1000);
+}, 1500);
