@@ -228,7 +228,7 @@ const createMenuFooterHtml = (container) => {
     );
     createImgElem(
         "menu__footer__contents__item__image",
-        "../assets/logout.png",
+        "./../assets/logout.png",
         menuFooterContentsItemLogout
     );
     createPElem(
