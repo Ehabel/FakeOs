@@ -14,7 +14,7 @@ const createMenuHeaderHtml = (container) => {
     );
     createImgElem(
         "menu__header__image",
-        "../assets/ball.jpg",
+        "./assets/ball.jpg",
         menuHeaderContents
     );
     createPElem("menu__header__user", "USER", menuHeaderContents);
@@ -97,7 +97,7 @@ const createMenuLeft = (container, leftMenuItem, LeftMenuName) => {
     for (let i = 0; i < leftMenuItem.length; i++) {
         createMenuMidItemHtml(
             container,
-            `../assets/${leftMenuItem[i]}.png`,
+            `./assets/${leftMenuItem[i]}.png`,
             `${LeftMenuName[i]}`
         );
     }
@@ -107,7 +107,7 @@ const createMenuRight = (container, rightMenuItem, rightMenuName) => {
     for (let i = 0; i < rightMenuItem.length; i++) {
         createMenuMidRightItemHtml(
             container,
-            `../assets/${rightMenuItem[i]}.png`,
+            `./assets/${rightMenuItem[i]}.png`,
             `${rightMenuName[i]}`
         );
     }
@@ -128,13 +128,13 @@ const createMenuMidHtml = (container) => {
     );
     createMenuMidItemClickable(
         menuMidContentsLeft,
-        "../assets/ie.png",
+        "./assets/ie.png",
         "Internet Explorer",
         "ie"
     );
     createMenuMidItemClickable(
         menuMidContentsLeft,
-        "../assets/solitaire.png",
+        "./assets/solitaire.png",
         "Solitaire",
         "ste"
     );
@@ -145,7 +145,7 @@ const createMenuMidHtml = (container) => {
     );
     createMenuMidItemClickable(
         menuMidContentsLeft,
-        "../assets/npad.png",
+        "./assets/npad.png",
         "Notepad",
         "notepad"
     );
@@ -168,7 +168,7 @@ const createMenuMidHtml = (container) => {
     );
     createMenuMidItemHtmlAll(
         menuMidContentsLeft,
-        "../assets/allpgms.ico",
+        "./assets/allpgms.ico",
         "All Programs"
     );
     const menuMidContentsRight = createHTMLElem(
@@ -228,7 +228,7 @@ const createMenuFooterHtml = (container) => {
     );
     createImgElem(
         "menu__footer__contents__item__image",
-        "./../assets/logout.png",
+        "./assets/logout.png",
         menuFooterContentsItemLogout
     );
     createPElem(
@@ -243,7 +243,7 @@ const createMenuFooterHtml = (container) => {
     );
     createImgElem(
         "menu__footer__contents__item__image",
-        "../assets/power.png",
+        "./assets/power.png",
         menuFooterContentsItemPower
     );
     createPElem(

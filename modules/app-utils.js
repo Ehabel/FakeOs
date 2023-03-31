@@ -51,7 +51,7 @@ const createTopBarForApp = (container, imgLink, appName, exitClassName) => {
     );
     createImgElem(
         "container__default__header__icons__img",
-        `../assets/${imgLink}.png`,
+        `./assets/${imgLink}.png`,
         appHeaderIcons
     );
     createPElem(
@@ -66,18 +66,18 @@ const createTopBarForApp = (container, imgLink, appName, exitClassName) => {
     );
     createImgElem(
         "container__default__header__buttons__button",
-        "../assets/minimize.png",
+        "./assets/minimize.png",
         appHeaderButtons
     );
     createImgElem(
         "container__default__header__buttons__button",
-        "../assets/maximize.png",
+        "./assets/maximize.png",
         appHeaderButtons
     );
     createImgElemMultiClass(
         "container__default__header__buttons__button",
         `exit__button__${exitClassName}`,
-        "../assets/exit.png",
+        "./assets/exit.png",
         appHeaderButtons
     );
 };
@@ -143,7 +143,7 @@ const createIEAppHeader = (ieContainer) => {
     );
     createImgElem(
         "container__default__options__subheader__other__button",
-        "../assets/ie/back.png",
+        "./assets/ie/back.png",
         ieOptionssubheaderBack
     );
     createPElem(
@@ -164,7 +164,7 @@ const createIEAppHeader = (ieContainer) => {
     );
     createImgElem(
         "container__default__options__subheader__other__button",
-        "../assets/ie/forward.png",
+        "./assets/ie/forward.png",
         ieOptionssubheaderForward
     );
     createHTMLElemMultiClass(
@@ -175,17 +175,17 @@ const createIEAppHeader = (ieContainer) => {
     );
     createImgElem(
         "container__default__options__subheader__button",
-        "../assets/ie/ieStop.png",
+        "./assets/ie/ieStop.png",
         ieOptionssubheader
     );
     createImgElem(
         "container__default__options__subheader__button",
-        "../assets/ie/ieRefresh.png",
+        "./assets/ie/ieRefresh.png",
         ieOptionssubheader
     );
     createImgElem(
         "container__default__options__subheader__button",
-        "../assets/ie/ieHome.png",
+        "./assets/ie/ieHome.png",
         ieOptionssubheader
     );
     createHTMLElem(
@@ -200,7 +200,7 @@ const createIEAppHeader = (ieContainer) => {
     );
     createImgElem(
         "container__default__options__subheader__other__button",
-        "../assets/search.png",
+        "./assets/search.png",
         ieOptionssubheaderSearch
     );
     createPElem(
@@ -215,7 +215,7 @@ const createIEAppHeader = (ieContainer) => {
     );
     createImgElem(
         "container__default__options__subheader__other__button",
-        "../assets/ie/favorites.png",
+        "./assets/ie/favorites.png",
         ieOptionssubheaderFavourites
     );
     createPElem(
@@ -268,7 +268,7 @@ const createIEApp = (container) => {
     );
     createImgElem(
         "container__ie__body__logo",
-        "../assets/google.png",
+        "./assets/google.png",
         ieMainBody
     );
     createHTMLElem("input", "container__ie__body__search", ieMainBody);
@@ -309,7 +309,7 @@ const createIESearchPage = (container, searchText) => {
     );
     createImgElem(
         "container__ie__searchbody__top__logo",
-        "../assets/google.png",
+        "./assets/google.png",
         ieMainBodyTop
     );
     const ieSearchBar = createHTMLElem(
@@ -387,7 +387,7 @@ const createSolitaireApp = (container) => {
     );
     createImgElem(
         "container__ste__body__img",
-        "../assets/solitaireImg.png",
+        "./assets/solitaireImg.png",
         solitaireContainer
     );
 };
