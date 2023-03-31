@@ -228,7 +228,7 @@ const createMenuFooterHtml = (container) => {
     );
     createImgElem(
         "menu__footer__contents__item__image",
-        "./assets/ball.jpg",
+        "./assets/Logout.png",
         menuFooterContentsItemLogout
     );
     createPElem(
@@ -243,7 +243,7 @@ const createMenuFooterHtml = (container) => {
     );
     createImgElem(
         "menu__footer__contents__item__image",
-        "./assets/power.png",
+        "./assets/Power.png",
         menuFooterContentsItemPower
     );
     createPElem(

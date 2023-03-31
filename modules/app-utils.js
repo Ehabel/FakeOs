@@ -215,7 +215,7 @@ const createIEAppHeader = (ieContainer) => {
     );
     createImgElem(
         "container__default__options__subheader__other__button",
-        "./assets/ie/favorites.png",
+        "./assets/ie/Favorites.png",
         ieOptionssubheaderFavourites
     );
     createPElem(
