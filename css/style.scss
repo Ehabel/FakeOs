@@ -1,4 +1,3 @@
-// sass --watch --no-source-map css/style.scss:css/style.css
 @use "./backgrounds.scss";
 @use "./borders.scss";
 
@@ -288,7 +287,6 @@ body {
                     font-size: 18px;
                 }
             }
-
             &__bottom {
                 padding: 55px 0 0 10vw;
                 &__text {
@@ -487,10 +485,8 @@ body {
                     height: 2.25vh;
                 }
                 &__text {
-                    font-family: "Libre Franklin", sans-serif;
-                    font-size: 1.4vh;
+                    @extend .menu__mid__contents__right__item__text;
                     font-weight: 300;
-                    margin-left: 0.3vw;
                     color: white;
                 }
             }

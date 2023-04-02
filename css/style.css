@@ -503,7 +503,7 @@ body {
   width: 1.5vw;
   height: 3vh;
 }
-.menu__mid__contents__right__item__text {
+.menu__mid__contents__right__item__text, .menu__footer__contents__item__text {
   font-family: "Libre Franklin", sans-serif;
   font-size: 1.4vh;
   font-weight: 600;
@@ -545,10 +545,7 @@ body {
   height: 2.25vh;
 }
 .menu__footer__contents__item__text {
-  font-family: "Libre Franklin", sans-serif;
-  font-size: 1.4vh;
   font-weight: 300;
-  margin-left: 0.3vw;
   color: white;
 }
 .menu__footer__contents__item:hover {
