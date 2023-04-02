@@ -290,6 +290,33 @@ const createIEApp = (container) => {
     );
 };
 
+const goBackHandler = (container) => {
+    container.removeChild(document.querySelector(".container__ie__searchbody"));
+    const ieMainBody = createHTMLElem("div", "container__ie__body", container);
+    createImgElem(
+        "container__ie__body__logo",
+        "./assets/google.png",
+        ieMainBody
+    );
+    createHTMLElem("input", "container__ie__body__search", ieMainBody);
+    const ieMainBtnContainer = createHTMLElem(
+        "div",
+        "container__ie__body__btnContainer",
+        ieMainBody
+    );
+    const googleSearchButton = createBtnElem(
+        "container__ie__body__button",
+        "Google Search",
+        ieMainBtnContainer
+    );
+    googleSearchButton.classList.add("search__google");
+    createBtnElem(
+        "container__ie__body__button",
+        "I'm Feeling Lucky",
+        ieMainBtnContainer
+    );
+};
+
 const createIESearchPage = (container, searchText) => {
     container.removeChild(document.querySelector(".container__ie__body"));
     const ieMainBody = createHTMLElem(
@@ -397,4 +424,5 @@ export {
     createIEApp,
     createSolitaireApp,
     createIESearchPage,
+    goBackHandler,
 };

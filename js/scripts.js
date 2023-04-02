@@ -9,6 +9,7 @@ import {
     createNotepadApp,
     createSolitaireApp,
     createIESearchPage,
+    goBackHandler,
 } from "../modules/app-utils.js";
 
 const startBtn = document.querySelector(".taskbar__start__button");
@@ -80,6 +81,81 @@ const createMenuHTML = () => {
     createMenuFooterHtml(menuContainer);
 };
 
+const ieGoBack = () => {
+    if (ieSearchButton.length >= 1) {
+        ieSearchButton[0].addEventListener("click", () => {
+            if (ieSearch[0] !== undefined && ieSearch[0].value !== "") {
+                const searchHeaderText = document.querySelector(
+                    ".container__default__options__subheader__addressbar__bar"
+                );
+                const textVal = ieSearch[0].value;
+                searchHeaderText.value = `https://www.google.com/search?q=${ieSearch[0].value}`;
+                createIESearchPage(
+                    document.querySelector(".container__ie"),
+                    textVal
+                );
+                if (ieSearchPageSearch[0] && textVal !== undefined) {
+                    ieSearchPageSearch[0].value = textVal;
+                    ieChangeAddressBar();
+                }
+                if (goBackIE[0]) {
+                    goBackIE[0].classList.add(
+                        "container__default__options__subheaderback--on"
+                    );
+                    if (goBackIEActive.length >= 1) {
+                        goBackIEActive[0].addEventListener("click", () => {
+                            goBackHandler(
+                                document.querySelector(".container__ie")
+                            );
+                            goBackIE[0].classList.remove(
+                                "container__default__options__subheaderback--on"
+                            );
+                        });
+                    }
+                }
+            }
+        });
+    }
+};
+
+const ieChangeAddressBar = () => {
+    if (ieSearchPageSearch.length >= 1) {
+        ieSearchPageSearch[0].addEventListener("keydown", (e) => {
+            if (e.code === "Enter") {
+                if (ieSearchPageSearch[0].value !== "") {
+                    const searchHeaderText = document.querySelector(
+                        ".container__default__options__subheader__addressbar__bar"
+                    );
+                    searchHeaderText.value = `https://www.google.com/search?q=${ieSearchPageSearch[0].value}`;
+                    document.querySelector(".bold__span").textContent =
+                        ieSearchPageSearch[0].value;
+                    if (goBackIE[0]) {
+                        goBackIE[0].classList.add(
+                            "container__default__options__subheaderback--on"
+                        );
+                    }
+                }
+            }
+        });
+    }
+};
+
+const closeApp = (exitButtonName, appClassName) => {
+    if (exitButtonName.length >= 1) {
+        exitButtonName[0].addEventListener("click", () => {
+            if (document.querySelector(appClassName)) {
+                desktop.removeChild(document.querySelector(appClassName));
+                switch (appClassName) {
+                    case ".container__ie":
+                        ieOpen = false;
+                    case ".container__ste":
+                        steOpen = false;
+                }
+            }
+        });
+    }
+};
+
 startBtn.addEventListener("click", () => {
     if (notepadAppText.classList.contains("container__item__text--clicked")) {
         notepadAppText.classList.remove("container__item__text--clicked");
@@ -95,6 +171,49 @@ startBtn.addEventListener("click", () => {
         startBtn.src = "./assets/buttons-3.png";
         createMenuHTML();
         isMenuOpen = true;
+        if (notepadMenuItem.length >= 1) {
+            notepadMenuItem[0].addEventListener("click", () => {
+                if (!notePadOpen) {
+                    startBtn.src = "./assets/buttons-1.png";
+                    counterNotepad = createNotepadApp(desktop, counterNotepad);
+                    notePadOpen = true;
+                    isMenuOpen = false;
+                    closeApp(exitButton, ".container__notepad");
+                    menuApp.removeChild(
+                        document.getElementsByClassName("menu__container")[0]
+                    );
+                }
+            });
+        }
+        if (ieMenuItem.length >= 1) {
+            ieMenuItem[0].addEventListener("click", () => {
+                if (!ieOpen) {
+                    startBtn.src = "./assets/buttons-1.png";
+                    createIEApp(desktop);
+                    ieOpen = true;
+                    isMenuOpen = false;
+                    closeApp(exitButtonIE, ".container__ie");
+                    ieGoBack();
+                    menuApp.removeChild(
+                        document.getElementsByClassName("menu__container")[0]
+                    );
+                }
+            });
+        }
+        if (steMenuItem.length >= 1) {
+            steMenuItem[0].addEventListener("click", () => {
+                if (!steOpen) {
+                    startBtn.src = "./assets/buttons-1.png";
+                    createSolitaireApp(desktop);
+                    steOpen = true;
+                    isMenuOpen = false;
+                    closeApp(exitButtonSTE, ".container__ste");
+                    menuApp.removeChild(
+                        document.getElementsByClassName("menu__container")[0]
+                    );
+                }
+            });
+        }
     } else {
         if (menuChild) {
             menuApp.removeChild(menuChild);
@@ -129,6 +248,7 @@ notepadApp.addEventListener("dblclick", (event) => {
     if (!notePadOpen) {
         counterNotepad = createNotepadApp(desktop, counterNotepad);
         notePadOpen = true;
+        closeApp(exitButton, ".container__notepad");
     }
 });
 
@@ -157,6 +277,8 @@ ieApp.addEventListener("dblclick", (event) => {
     if (!ieOpen) {
         createIEApp(desktop);
         ieOpen = true;
+        ieGoBack();
+        closeApp(exitButtonIE, ".container__ie");
     }
 });
 
@@ -185,6 +307,7 @@ steApp.addEventListener("dblclick", (event) => {
     if (!steOpen) {
         createSolitaireApp(desktop);
         steOpen = true;
+        closeApp(exitButtonSTE, ".container__ste");
     }
 });
 
@@ -223,125 +346,9 @@ const swapZIndex = (moveToFront, moveToBackOne, moveToBackTwo) => {
 };
 
 setInterval(() => {
-    if (goBackIEActive.length >= 1) {
-        goBackIEActive[0].addEventListener("click", () => {
-            desktop.removeChild(document.querySelector(".container__ie"));
-            createIEApp(desktop);
-            goBackIE[0].classList.remove(
-                "container__default__options__subheaderback--on"
-            );
-        });
-    }
-    if (ieSearchButton.length >= 1) {
-        ieSearchButton[0].addEventListener("click", () => {
-            if (ieSearch[0] !== undefined && ieSearch[0].value !== "") {
-                const searchHeaderText = document.querySelector(
-                    ".container__default__options__subheader__addressbar__bar"
-                );
-                const textVal = ieSearch[0].value;
-                searchHeaderText.value = `https://www.google.com/search?q=${ieSearch[0].value}`;
-                createIESearchPage(
-                    document.querySelector(".container__ie"),
-                    textVal
-                );
-                if (ieSearchPageSearch[0] && textVal !== undefined) {
-                    ieSearchPageSearch[0].value = textVal;
-                }
-                if (goBackIE[0]) {
-                    goBackIE[0].classList.add(
-                        "container__default__options__subheaderback--on"
-                    );
-                }
-            }
-        });
-    }
-    if (ieSearchPageSearch.length >= 1) {
-        ieSearchPageSearch[0].addEventListener("keydown", (e) => {
-            if (e.code === "Enter") {
-                if (ieSearchPageSearch[0].value !== "") {
-                    const searchHeaderText = document.querySelector(
-                        ".container__default__options__subheader__addressbar__bar"
-                    );
-                    searchHeaderText.value = `https://www.google.com/search?q=${ieSearchPageSearch[0].value}`;
-                    document.querySelector(".bold__span").textContent =
-                        ieSearchPageSearch[0].value;
-                    if (goBackIE[0]) {
-                        goBackIE[0].classList.add(
-                            "container__default__options__subheaderback--on"
-                        );
-                    }
-                }
-            }
-        });
-    }
-    if (exitButton.length >= 1) {
-        exitButton[0].addEventListener("click", () => {
-            if (document.querySelector(".container__notepad")) {
-                desktop.removeChild(
-                    document.querySelector(".container__notepad")
-                );
-                notePadOpen = false;
-            }
-        });
-    }
-    if (exitButtonIE.length >= 1) {
-        exitButtonIE[0].addEventListener("click", () => {
-            if (document.querySelector(".container__ie")) {
-                desktop.removeChild(document.querySelector(".container__ie"));
-                ieOpen = false;
-            }
-        });
-    }
-    if (exitButtonSTE.length >= 1) {
-        exitButtonSTE[0].addEventListener("click", () => {
-            if (document.querySelector(".container__ste")) {
-                desktop.removeChild(document.querySelector(".container__ste"));
-                steOpen = false;
-            }
-        });
-    }
-    if (notepadMenuItem.length >= 1) {
-        notepadMenuItem[0].addEventListener("click", () => {
-            if (!notePadOpen) {
-                startBtn.src = "./assets/buttons-1.png";
-                counterNotepad = createNotepadApp(desktop, counterNotepad);
-                notePadOpen = true;
-                isMenuOpen = false;
-                menuApp.removeChild(
-                    document.getElementsByClassName("menu__container")[0]
-                );
-            }
-        });
-    }
-    if (ieMenuItem.length >= 1) {
-        ieMenuItem[0].addEventListener("click", () => {
-            if (!ieOpen) {
-                startBtn.src = "./assets/buttons-1.png";
-                createIEApp(desktop);
-                ieOpen = true;
-                isMenuOpen = false;
-                menuApp.removeChild(
-                    document.getElementsByClassName("menu__container")[0]
-                );
-            }
-        });
-    }
-    if (steMenuItem.length >= 1) {
-        steMenuItem[0].addEventListener("click", () => {
-            if (!steOpen) {
-                startBtn.src = "./assets/buttons-1.png";
-                createSolitaireApp(desktop);
-                steOpen = true;
-                isMenuOpen = false;
-                menuApp.removeChild(
-                    document.getElementsByClassName("menu__container")[0]
-                );
-            }
-        });
-    }
     swapZIndex(notepadZIndex, ieZIndex, steZIndex);
     swapZIndex(ieZIndex, notepadZIndex, steZIndex);
-    swapZIndex(steZIndex, notepadZIndex, ieZIndex);
+    swapZIndex(steZIndex, ieZIndex, notepadZIndex);
     let elem = document.querySelectorAll("img");
     elem.forEach((element) => {
         element.setAttribute("draggable", false);
