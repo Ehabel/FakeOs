@@ -4,6 +4,8 @@
 
 The goal of this project is to consolidate understandings of HTML, CSS and JavaScript by replicating the layout and format of a design/image using CSS, add content via HTML and control the interactive elements via JavaScript.
 
+Website deployed at: https://ehabel.github.io/FakeOs/
+
 ## Goals
 
 -   Learn how to manipulate the DOM using JavaScript EventListeners.
