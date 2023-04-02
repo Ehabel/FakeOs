@@ -1,4 +1,6 @@
 // sass --watch --no-source-map css/style.scss:css/style.css
+@use "./backgrounds.scss";
+@use "./borders.scss";
 
 @mixin flex-opts($align, $justify, $direction: row, $wrap: nowrap) {
     display: flex;
@@ -6,6 +8,19 @@
     justify-content: $justify;
     flex-direction: $direction;
     flex-wrap: $wrap;
+}
+
+@mixin dimension-margin(
+    $width,
+    $height,
+    $margin-top: 0,
+    $margin-right: 0,
+    $margin-bottom: 0,
+    $margin-left: 0
+) {
+    width: $width;
+    height: $height;
+    margin: $margin-top $margin-right $margin-bottom $margin-left;
 }
 
 * {
@@ -23,10 +38,7 @@ body {
 }
 
 .arrow__down {
-    height: 0px;
-    width: 0px;
     border: none;
-    margin-left: 5px;
     border-top: 5px solid #8f8181;
     border-left: 5px solid rgba(0, 0, 0, 0);
     border-right: 5px solid rgba(0, 0, 0, 0);
@@ -48,9 +60,7 @@ body {
     &__item {
         z-index: 1;
         @include flex-opts(center, center, column);
-        width: 4vw;
-        height: 8vh;
-        margin: 5vh 0 0 1vw;
+        @include dimension-margin(4vw, 8vh, 5vh, 0, 0, 1vw);
         &__image {
             width: 3vw;
             height: 6vh;
@@ -78,24 +88,7 @@ body {
             width: 100%;
             height: 3vh;
             background-color: #245dda;
-            background: linear-gradient(
-                    rgb(0, 88, 238) 0%,
-                    rgb(53, 147, 255) 4%,
-                    rgb(40, 142, 255) 6%,
-                    rgb(18, 125, 255) 8%,
-                    rgb(3, 111, 252) 10%,
-                    rgb(2, 98, 238) 14%,
-                    rgb(0, 87, 229) 20%,
-                    rgb(0, 84, 227) 24%,
-                    rgb(0, 85, 235) 56%,
-                    rgb(0, 91, 245) 66%,
-                    rgb(2, 106, 254) 76%,
-                    rgb(0, 98, 239) 86%,
-                    rgb(0, 82, 214) 92%,
-                    rgb(0, 64, 171) 94%,
-                    rgb(0, 48, 146) 100%
-                )
-                center/cover no-repeat;
+            @include backgrounds.background-app-header;
             &__icons {
                 -webkit-user-select: none;
                 -ms-user-select: none;
@@ -135,14 +128,12 @@ body {
                         rgba(255, 255, 255, 1) 100%
                     )
                     center/cover no-repeat;
-                border-left: 3px solid rgb(8, 49, 217);
-                border-right: 3px solid rgb(8, 49, 217);
+                @include borders.app-border-left-right;
             }
             &__header {
                 background-color: #ecebd9;
                 width: calc(100% - 6px);
-                border-left: 3px solid rgb(8, 49, 217);
-                border-right: 3px solid rgb(8, 49, 217);
+                @include borders.app-border-left-right;
                 @include flex-opts(center, flex-start);
 
                 &__text {
@@ -160,8 +151,7 @@ body {
             &__subheader {
                 height: 4.5vh;
                 background-color: #ecebd9;
-                border-left: 3px solid rgb(8, 49, 217);
-                border-right: 3px solid rgb(8, 49, 217);
+                @include borders.app-border-left-right;
                 @include flex-opts(center, flex-start);
                 &__other__button,
                 &__button {
@@ -186,8 +176,7 @@ body {
                 &__addressbar {
                     @include flex-opts(center, flex-start);
                     background-color: #ecebd9;
-                    border-left: 3px solid rgb(8, 49, 217);
-                    border-right: 3px solid rgb(8, 49, 217);
+                    @include borders.app-border-left-right;
                     font-size: small;
                     color: rgba(0, 0, 0, 0.4);
                     &__text {
@@ -237,9 +226,7 @@ body {
             width: calc(100% - 6px);
             height: 59vh;
             background-color: white;
-            border-left: 3px solid rgb(8, 49, 217);
-            border-right: 3px solid rgb(8, 49, 217);
-            border-bottom: 3px solid rgb(8, 49, 217);
+            @include borders.app-border;
             &__search {
                 width: 50%;
                 height: 4vh;
@@ -273,9 +260,7 @@ body {
             width: calc(100% - 6px);
             height: 59vh;
             background-color: white;
-            border-left: 3px solid rgb(8, 49, 217);
-            border-right: 3px solid rgb(8, 49, 217);
-            border-bottom: 3px solid rgb(8, 49, 217);
+            @include borders.app-border;
             &__topcont {
                 height: 10vh;
                 border-bottom: 1px solid rgb(235, 235, 235);
@@ -321,9 +306,7 @@ body {
             width: 100%;
         }
         &__textarea {
-            border-left: 3px solid rgb(8, 49, 217);
-            border-right: 3px solid rgb(8, 49, 217);
-            border-bottom: 3px solid rgb(8, 49, 217);
+            @include borders.app-border;
             min-width: 20vw;
             min-height: 20vh;
             -webkit-box-sizing: border-box;
@@ -337,7 +320,6 @@ body {
             overflow: auto;
             outline: none;
             resize: none;
-
             -webkit-box-shadow: none;
             -moz-box-shadow: none;
             box-shadow: none;
@@ -350,9 +332,7 @@ body {
         &__body {
             &__img {
                 width: 45vw;
-                border-left: 3px solid rgb(8, 49, 217);
-                border-right: 3px solid rgb(8, 49, 217);
-                border-bottom: 3px solid rgb(8, 49, 217);
+                @include borders.app-border;
             }
         }
     }
@@ -374,14 +354,7 @@ body {
 
     &__header {
         @include flex-opts(center, left);
-        background: linear-gradient(
-                to bottom,
-                #245edc 0%,
-                rgb(83, 181, 219) 4%,
-                #245edc 6%,
-                #3f8cf3 100%
-            )
-            center/cover no-repeat;
+        @include backgrounds.background-startmenu;
         width: 100%;
         height: 8vh;
         border-radius: 10px 10px 0 0;
@@ -418,15 +391,8 @@ body {
                 left: 0px;
                 right: 0px;
                 top: 0px;
-                display: block;
                 height: 2px;
-                background: linear-gradient(
-                    to right,
-                    rgba(0, 0, 0, 0) 0%,
-                    rgb(218, 136, 74) 50%,
-                    rgba(0, 0, 0, 0) 100%
-                );
-                border: 0px;
+                @include backgrounds.background-orange-sep;
             }
             &__left {
                 width: 100%;
@@ -449,40 +415,28 @@ body {
                 &__all {
                     @include flex-opts(center, center);
                     &__text {
-                        font-family: "Libre Franklin", sans-serif;
-                        font-size: 1.6vh;
-                        font-weight: 100;
-                        text-align: center;
+                        @extend .menu__mid__contents__left__item__text;
                     }
                     &__image {
                         width: 1.5vw;
                         height: 3vh;
                     }
                 }
-
                 &__separator {
                     height: 0.2vh;
-                    background: linear-gradient(
-                            to right,
-                            rgba(0, 0, 0, 0) 0%,
-                            rgba(0, 0, 0, 0.1) 50%,
-                            rgba(0, 0, 0, 0) 100%
-                        )
-                        content-box;
+                    @include backgrounds.separator-grey;
                     border-top: 3px solid transparent;
                     border-bottom: 3px solid transparent;
                     &__two {
                         margin: 1.5vh 0 0 0;
                     }
                 }
-
                 &__item:hover,
                 &__all:hover {
                     background-color: #1941a5;
                     color: white;
                 }
             }
-
             &__right {
                 background-color: #c7d8ef;
                 width: 100%;
@@ -504,16 +458,9 @@ body {
                         margin-left: 0.3vw;
                     }
                 }
-
                 &__separator {
                     height: 0.2vh;
-                    background: linear-gradient(
-                            to right,
-                            rgba(0, 0, 0, 0) 0%,
-                            rgba(135, 179, 226, 0.71) 50%,
-                            rgba(0, 0, 0, 0) 100%
-                        )
-                        content-box;
+                    @include backgrounds.separator-blue;
                     border-top: 3px solid transparent;
                     border-bottom: 3px solid transparent;
                 }
@@ -525,16 +472,8 @@ body {
             }
         }
     }
-
     &__footer {
-        background: linear-gradient(
-                to bottom,
-                #3f8cf3 0%,
-                #3a6dda 25%,
-                #245edc 50%,
-                #245edc 100%
-            )
-            center/cover no-repeat;
+        @include backgrounds.background-menu-footer;
         height: 4vh;
         width: 100%;
         &__contents {
@@ -563,39 +502,20 @@ body {
 }
 
 .taskbar {
-    display: flex;
-    justify-content: space-between;
+    @include flex-opts(normal, space-between);
     background-color: #245dda;
-    background: linear-gradient(
-            to bottom,
-            #245edc 0%,
-            #3f8cf3 10%,
-            #245edc 20%,
-            #245edc 90%,
-            #1941a5 100%
-        )
-        center/cover no-repeat;
+    @include backgrounds.background-taskbar;
     position: fixed;
     bottom: 0;
     left: 0;
     height: 3.5%;
     width: 100%;
-
     &__time {
         &__container {
             @include flex-opts(center, end);
             width: 7%;
             background-color: #3f8cf3;
-            background: linear-gradient(
-                    to bottom,
-                    #3f8cf3 0%,
-                    skyblue 10%,
-                    #3f8cf3 20%,
-                    #3f8cf3 90%,
-                    #3f8cf3 100%
-                )
-                center/cover no-repeat;
-
+            @include backgrounds.time-container;
             &__img {
                 margin-top: 0.1vw;
                 width: 1vw;
@@ -606,7 +526,6 @@ body {
         color: white;
         margin: 0px 0.3vw;
     }
-
     &__start__button {
         cursor: pointer;
     }
