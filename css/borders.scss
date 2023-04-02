@@ -1,0 +1,10 @@
+@mixin app-border {
+    border-left: 3px solid rgb(8, 49, 217);
+    border-right: 3px solid rgb(8, 49, 217);
+    border-bottom: 3px solid rgb(8, 49, 217);
+}
+
+@mixin app-border-left-right {
+    border-left: 3px solid rgb(8, 49, 217);
+    border-right: 3px solid rgb(8, 49, 217);
+}

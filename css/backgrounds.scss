@@ -1,0 +1,95 @@
+@mixin background-startmenu {
+    background: linear-gradient(
+            to bottom,
+            #245edc 0%,
+            rgb(83, 181, 219) 4%,
+            #245edc 6%,
+            #3f8cf3 100%
+        )
+        center/cover no-repeat;
+}
+
+@mixin separator-grey {
+    background: linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 0.1) 50%,
+            rgba(0, 0, 0, 0) 100%
+        )
+        content-box;
+}
+
+@mixin separator-blue {
+    background: linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(135, 179, 226, 0.71) 50%,
+            rgba(0, 0, 0, 0) 100%
+        )
+        content-box;
+}
+
+@mixin background-menu-footer {
+    background: linear-gradient(
+            to bottom,
+            #3f8cf3 0%,
+            #3a6dda 25%,
+            #245edc 50%,
+            #245edc 100%
+        )
+        center/cover no-repeat;
+}
+
+@mixin background-taskbar {
+    background: linear-gradient(
+            to bottom,
+            #245edc 0%,
+            #3f8cf3 10%,
+            #245edc 20%,
+            #245edc 90%,
+            #1941a5 100%
+        )
+        center/cover no-repeat;
+}
+
+@mixin time-container {
+    background: linear-gradient(
+            to bottom,
+            #3f8cf3 0%,
+            skyblue 10%,
+            #3f8cf3 20%,
+            #3f8cf3 90%,
+            #3f8cf3 100%
+        )
+        center/cover no-repeat;
+}
+
+@mixin background-orange-sep {
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0) 0%,
+        rgb(218, 136, 74) 50%,
+        rgba(0, 0, 0, 0) 100%
+    );
+}
+
+@mixin background-app-header {
+    background: linear-gradient(
+            rgb(0, 88, 238) 0%,
+            rgb(53, 147, 255) 4%,
+            rgb(40, 142, 255) 6%,
+            rgb(18, 125, 255) 8%,
+            rgb(3, 111, 252) 10%,
+            rgb(2, 98, 238) 14%,
+            rgb(0, 87, 229) 20%,
+            rgb(0, 84, 227) 24%,
+            rgb(0, 85, 235) 56%,
+            rgb(0, 91, 245) 66%,
+            rgb(2, 106, 254) 76%,
+            rgb(0, 98, 239) 86%,
+            rgb(0, 82, 214) 92%,
+            rgb(0, 64, 171) 94%,
+            rgb(0, 48, 146) 100%
+        )
+        center/cover no-repeat;
+}
