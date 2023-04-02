@@ -83,10 +83,9 @@ const createTopBarForApp = (container, imgLink, appName, exitClassName) => {
 };
 
 const createNotepadApp = (container, counter) => {
-    const notepadContainer = createHTMLElemMultiClass(
+    const notepadContainer = createHTMLElem(
         "div",
         "container__notepad",
-        `container__notepad__${counter}`,
         container
     );
     notepadContainer.classList.add("container__default");

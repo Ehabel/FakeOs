@@ -59,7 +59,6 @@ let isMenuOpen = false;
 let notePadOpen = false;
 let ieOpen = false;
 let steOpen = false;
-let counterNotepad = 0;
 let zIndexApp = 2;
 
 const updateClock = () => {
@@ -146,6 +145,8 @@ const closeApp = (exitButtonName, appClassName) => {
             if (document.querySelector(appClassName)) {
                 desktop.removeChild(document.querySelector(appClassName));
                 switch (appClassName) {
+                    case ".container__notepad":
+                        notePadOpen = false;
                     case ".container__ie":
                         ieOpen = false;
                     case ".container__ste":
@@ -175,7 +176,7 @@ startBtn.addEventListener("click", () => {
             notepadMenuItem[0].addEventListener("click", () => {
                 if (!notePadOpen) {
                     startBtn.src = "./assets/buttons-1.png";
-                    counterNotepad = createNotepadApp(desktop, counterNotepad);
+                    createNotepadApp(desktop);
                     notePadOpen = true;
                     isMenuOpen = false;
                     closeApp(exitButton, ".container__notepad");
@@ -246,7 +247,7 @@ notepadApp.addEventListener("dblclick", (event) => {
         notepadAppText.classList.remove("container__item__text--clicked");
     }
     if (!notePadOpen) {
-        counterNotepad = createNotepadApp(desktop, counterNotepad);
+        createNotepadApp(desktop);
         notePadOpen = true;
         closeApp(exitButton, ".container__notepad");
     }
