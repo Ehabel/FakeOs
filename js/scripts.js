@@ -33,7 +33,7 @@ const ieSearchPageSearch = document.getElementsByClassName(
     "container__ie__searchbody__top__search"
 );
 
-const ieSearch = document.getElementsByClassName("container__ie__body__search");
+let ieSearch = document.getElementsByClassName("container__ie__body__search");
 const steApp = document.querySelector(".app__ste");
 const steAppText = document.querySelector(".app__ste__item__text");
 const steMenuItem = document.getElementsByClassName(
@@ -103,12 +103,14 @@ const ieGoBack = () => {
                     );
                     if (goBackIEActive.length >= 1) {
                         goBackIEActive[0].addEventListener("click", () => {
-                            goBackHandler(
-                                document.querySelector(".container__ie")
-                            );
-                            goBackIE[0].classList.remove(
-                                "container__default__options__subheaderback--on"
-                            );
+                            if (document.querySelector(".container__ie")) {
+                                goBackHandler(
+                                    document.querySelector(".container__ie")
+                                );
+                                goBackIE[0].classList.remove(
+                                    "container__default__options__subheaderback--on"
+                                );
+                            }
                         });
                     }
                 }
@@ -347,6 +349,7 @@ const swapZIndex = (moveToFront, moveToBackOne, moveToBackTwo) => {
 };
 
 setInterval(() => {
+    ieGoBack();
     swapZIndex(notepadZIndex, ieZIndex, steZIndex);
     swapZIndex(ieZIndex, notepadZIndex, steZIndex);
     swapZIndex(steZIndex, ieZIndex, notepadZIndex);
